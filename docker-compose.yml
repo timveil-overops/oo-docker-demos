@@ -1,12 +1,12 @@
 version: '3'
 services:
   analysis-server:
-    container_name: analysis-server
-    domainname: demo.local
-    hostname: as
     build:
       context: ./analysis-server
-      args:
-        - FQDN=as.demo.local
     ports:
       - "8080:8080"
+  collector:
+    build:
+      context: ./collector
+    depends_on:
+      - analysis-server
