@@ -21,3 +21,10 @@ services:
           - A_SECRET_KEY=${SECRET_KEY}
     depends_on:
       - collector
+  scala-agent:
+    build:
+      context: ./agent-scala-boom
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - collector
