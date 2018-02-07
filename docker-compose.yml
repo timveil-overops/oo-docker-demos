@@ -10,6 +10,7 @@ services:
       context: ./collector
       args:
           - A_SECRET_KEY=${SECRET_KEY}
-          - A_COLLECTOR_PORT=${COLLECTOR_PORT}
+    ports:
+      - "6060:6060"
     depends_on:
       - analysis-server
