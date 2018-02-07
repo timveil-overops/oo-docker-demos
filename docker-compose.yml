@@ -8,5 +8,16 @@ services:
   collector:
     build:
       context: ./collector
+      args:
+        - SECRET_KEY=${SECRET_KEY}
+        - COLLECTOR_PORT=${COLLECTOR_PORT}
     depends_on:
       - analysis-server
+  java-agent:
+    build:
+      context: ./agent-java-jam
+      args:
+        - SECRET_KEY=${SECRET_KEY}
+        - COLLECTOR_PORT=${COLLECTOR_PORT}
+    depends_on:
+      - collector
