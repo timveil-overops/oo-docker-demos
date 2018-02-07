@@ -8,6 +8,12 @@
 
 ## notes
 
+###
+
+secret key for on-prem trial is always the same and user is admin@takipi.com / 123456
+
+trial sk is always S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae
+
 ### agent/collector install
 
 Saas install with previously known secret key
