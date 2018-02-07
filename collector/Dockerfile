@@ -2,8 +2,21 @@ FROM openjdk:8
 
 ENV TAKIPI_HOME /opt/takipi
 
-#RUN yum install -y java-1.8.0-openjdk-devel wget net-tools
+ARG A_SECRET_KEY
+ARG A_COLLECTOR_PORT
 
-RUN wget -O - -o /dev/null http://get.takipi.com | bash /dev/stdin -i --sk=S35018#+Wm8ztPJLPOGFquu#rtosllqYdrj5TdrcsTd2yw/KezHSSMW241Z13h7v3SM=#37a8 --listen_on_port=6060 --machine_name=collector
+ENV SECURET_KEY_ENV=$A_SECRET_KEY
+ENV COLLECTOR_PORT_ENV=$A_COLLECTOR_PORT
 
-CMD /opt/takipi/bin/takipi-service -nfd -l
+RUN echo "Takipi Home: $TAKIPI_HOME"
+RUN echo "Secret Key: $SECURET_KEY_ENV"
+RUN echo "Collector Port: $COLLECTOR_PORT_ENV"
+
+# secret key for on-prem trial is always the same and user is admin@takipi.com / 123456
+# trial sk is always S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae
+ADD . /startup
+WORKDIR /startup
+
+CMD ./wait-for-analysis-server.sh $SECURET_KEY_ENV $COLLECTOR_PORT_ENV
+
+
