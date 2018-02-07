@@ -9,4 +9,6 @@ RUN echo "Secret Key: $SECURET_KEY_ENV"
 ADD . /startup
 WORKDIR /startup
 
-CMD ./wait-for-collector.sh $SECURET_KEY_ENV
+RUN curl -o javajam.jar -L https://s3-us-west-1.amazonaws.com/overops/javajam.jar
+
+ENTRYPOINT ./wait-for-collector.sh $SECURET_KEY_ENV
