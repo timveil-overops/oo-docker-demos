@@ -5,6 +5,7 @@
 ## issues
 
 - issue with collector oneliner daemon startup when base image is centos:7.  works find with openjdk:8
+- daemon does not start automatically on openjdk:8 when using on-prem install flavor of collector install.
 
 ## notes
 
