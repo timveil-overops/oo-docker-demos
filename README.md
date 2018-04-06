@@ -7,6 +7,8 @@
 - issue with collector oneliner daemon startup when base image is centos:7.  works find with openjdk:8
 - daemon does not start automatically on openjdk:8 when using on-prem install flavor of collector install.
 
+- https://hub.docker.com/_/centos/  systemd is not enabled by defualt in docker images
+
 ## notes
 
 ###
@@ -73,3 +75,10 @@ wget -O - -o /dev/null "http://analysis-server:8080/app/download?t=inst" | bash 
 ```
 
 
+
+docker-compose down
+docker-compose up
+docker-compose build --no-cache
+
+admin@takipi.com
+123456
