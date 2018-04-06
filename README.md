@@ -1,4 +1,4 @@
 # OverOps Docker Demos
 
-* [On Prem](onprem/README.md)
-* [SaaS](saas/README.md)
+* [On Prem](onprem)
+* [SaaS](saas)
