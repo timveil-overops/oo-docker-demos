@@ -1,8 +1,18 @@
 
 FROM openjdk:8
 
-RUN curl -Ls /dev/null http://get.takipi.com/takipi-installer | bash /dev/stdin -i --sk=S34749#PtqgO3AQi2NNOEZD#2hpk07nOVmYBTSuIDkjy9MBY4PGCboVkttTZWx/wHJ8=#773c
+RUN apt-get update
+
+RUN apt-get install -y net-tools
+
+RUN mkdir -p /etc/init
+
+RUN touch /etc/init/takipi.conf
+
+RUN curl -Ls /dev/null http://get.takipi.com/takipi-t4c-installer | bash /dev/stdin -i --sk=<YOUR_SECRET_KEY>
+
+RUN /opt/takipi/etc/takipi-setup-machine-name saas-oneliner
 
 RUN curl -o javajam.jar -L https://s3-us-west-1.amazonaws.com/overops/javajam.jar
 
-CMD java -agentlib:TakipiAgent -jar javajam.jar
+CMD java -agentlib:TakipiAgent -Dtakipi.name=saas-oneliner -Dtakipi.deployment.name=v1.0 -jar javajam.jar | tail --retry -f -n +1 /opt/takipi/log/bugtale_service.log

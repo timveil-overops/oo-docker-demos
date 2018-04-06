@@ -1,5 +1,7 @@
 FROM openjdk:8
 
+RUN apt-get update
+
 ENV TAKIPI_HOME /opt/takipi
 
 ARG A_SECRET_KEY

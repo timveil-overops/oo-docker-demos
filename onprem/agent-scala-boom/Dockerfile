@@ -1,5 +1,7 @@
 FROM openjdk:8
 
+RUN apt-get update
+
 ARG A_SECRET_KEY
 
 ENV SECURET_KEY_ENV=$A_SECRET_KEY
