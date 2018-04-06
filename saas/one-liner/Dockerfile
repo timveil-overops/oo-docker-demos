@@ -3,10 +3,11 @@ FROM openjdk:8
 
 RUN apt-get update
 
+# netstat is used by instsaller. not required, but nice to have.
 RUN apt-get install -y net-tools
 
+# not sure why i need to create this directory and file
 RUN mkdir -p /etc/init
-
 RUN touch /etc/init/takipi.conf
 
 RUN curl -Ls /dev/null http://get.takipi.com/takipi-t4c-installer | bash /dev/stdin -i --sk=<YOUR_SECRET_KEY>
