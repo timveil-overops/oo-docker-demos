@@ -4,18 +4,18 @@
 
 ## issues
 
-- issue with collector oneliner daemon startup when base image is centos:7.  works find with openjdk:8
-- daemon does not start automatically on openjdk:8 when using on-prem install flavor of collector install.
+- issue with collector one-liner daemon startup when base image is `centos:7`.  works find with `openjdk:8`
+- daemon does not start automatically on `openjdk:8` when using on-prem install flavor of collector install.
 
-- https://hub.docker.com/_/centos/  systemd is not enabled by defualt in docker images
+- https://hub.docker.com/_/centos/  systemd is not enabled by default in docker images
 
 ## notes
 
 ###
 
-secret key for on-prem trial is always the same and user is admin@takipi.com / 123456
+Trial username and password: `admin@takipi.com` / `123456`
 
-trial sk is always S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae
+Trial secret key: `S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae`
 
 ### agent/collector install
 
@@ -75,10 +75,9 @@ wget -O - -o /dev/null "http://analysis-server:8080/app/download?t=inst" | bash 
 ```
 
 
-
+```
 docker-compose down
 docker-compose up
 docker-compose build --no-cache
+```
 
-admin@takipi.com
-123456
