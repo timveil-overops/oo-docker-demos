@@ -1,11 +1,18 @@
-In `Dockerfile`, replace `<YOUR_SECRET_KEY>` with your secret key
+# Instructions
+This demo includes a docker image for the remote collector and one Java agent.  To begin, run the following commands.
 
-build image
+Build the images
+
 ```
-docker build --no-cache -t saas-oneliner .
+docker-compose build --no-cache
 ```
 
-run the image
+Start the images
 ```
-docker run saas-oneliner
+docker-compose up
+```
+
+Stop and destroy the images
+```
+docker-compose down
 ```

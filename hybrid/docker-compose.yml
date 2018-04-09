@@ -1,0 +1,30 @@
+version: '3'
+services:
+  analysis-server:
+    build:
+      context: ./analysis-server
+    ports:
+      - "8080:8080"
+  collector:
+    build:
+      context: ./collector
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    ports:
+      - "6060:6060"
+    depends_on:
+      - analysis-server
+  java-agent:
+    build:
+      context: ./agent-java-jam
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - collector
+  scala-agent:
+    build:
+      context: ./agent-scala-boom
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - collector
