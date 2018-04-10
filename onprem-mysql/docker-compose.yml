@@ -1,0 +1,39 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: overops
+      MYSQL_USER: overops
+      MYSQL_PASSWORD: overops
+      MYSQL_ROOT_HOST: "%"
+  analysis-server:
+    build:
+      context: ./analysis-server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  collector:
+    build:
+      context: ./collector
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    ports:
+      - "6060:6060"
+    depends_on:
+      - analysis-server
+  agent-java-jam:
+    build:
+      context: ./agent-java-jam
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - collector
+  agent-scala-boom:
+    build:
+      context: ./agent-scala-boom
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - collector
