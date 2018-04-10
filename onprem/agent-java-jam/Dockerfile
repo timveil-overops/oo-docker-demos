@@ -7,10 +7,12 @@ ENV SECRET_KEY_ENV=$A_SECRET_KEY
 
 RUN echo "Secret Key: $SECRET_KEY_ENV"
 
-COPY wait-for-collector.sh .
+RUN mkdir -p /tmp/takipi-install
 
-RUN chmod a+x wait-for-collector.sh
+COPY wait-for-collector.sh /tmp/takipi-install
+
+RUN chmod a+x /tmp/takipi-install/wait-for-collector.sh
 
 RUN curl -o javajam.jar -L https://s3-us-west-1.amazonaws.com/overops/javajam.jar
 
-ENTRYPOINT ./wait-for-collector.sh $SECRET_KEY_ENV
+ENTRYPOINT ./tmp/takipi-install/wait-for-collector.sh $SECRET_KEY_ENV

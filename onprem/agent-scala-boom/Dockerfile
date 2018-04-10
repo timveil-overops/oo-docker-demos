@@ -7,10 +7,12 @@ ENV SECRET_KEY_ENV=$A_SECRET_KEY
 
 RUN echo "Secret Key: $SECRET_KEY_ENV"
 
-COPY wait-for-collector.sh .
+RUN mkdir -p /tmp/takipi-install
 
-RUN chmod a+x wait-for-collector.sh
+COPY wait-for-collector.sh /tmp/takipi-install
+
+RUN chmod a+x /tmp/takipi-install/wait-for-collector.sh
 
 RUN curl -o scala-boom.jar -L https://s3.amazonaws.com/app-takipi-com/chen/scala-boom.jar
 
-ENTRYPOINT ./wait-for-collector.sh $SECRET_KEY_ENV
+ENTRYPOINT ./tmp/takipi-install/wait-for-collector.sh $SECRET_KEY_ENV
