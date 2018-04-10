@@ -14,14 +14,14 @@ services:
       - "6060:6060"
     depends_on:
       - analysis-server
-  java-agent:
+  agent-java-jam:
     build:
       context: ./agent-java-jam
       args:
           - A_SECRET_KEY=${SECRET_KEY}
     depends_on:
       - collector
-  scala-agent:
+  agent-scala-boom:
     build:
       context: ./agent-scala-boom
       args:

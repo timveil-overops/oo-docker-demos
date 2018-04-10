@@ -11,6 +11,8 @@ RUN echo "Secret Key: $SECRET_KEY_ENV"
 
 COPY wait-for-analysis-server.sh .
 
+RUN chmod a+x wait-for-analysis-server.sh
+
 ENTRYPOINT ./wait-for-analysis-server.sh $SECRET_KEY_ENV
 
 
