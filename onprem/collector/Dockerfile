@@ -15,6 +15,6 @@ COPY wait-for-analysis-server.sh /tmp/takipi-install
 
 RUN chmod a+x /tmp/takipi-install/wait-for-analysis-server.sh
 
-ENTRYPOINT ./tmp/takipi-install/wait-for-analysis-server.sh $SECRET_KEY_ENV
+ENTRYPOINT /tmp/takipi-install/wait-for-analysis-server.sh $SECRET_KEY_ENV
 
 

@@ -15,4 +15,4 @@ RUN chmod a+x /tmp/takipi-install/wait-for-collector.sh
 
 RUN curl -o scala-boom.jar -L https://s3.amazonaws.com/app-takipi-com/chen/scala-boom.jar
 
-ENTRYPOINT ./tmp/takipi-install/wait-for-collector.sh $SECRET_KEY_ENV
+ENTRYPOINT /tmp/takipi-install/wait-for-collector.sh $SECRET_KEY_ENV

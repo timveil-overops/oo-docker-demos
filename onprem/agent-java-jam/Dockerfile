@@ -15,4 +15,4 @@ RUN chmod a+x /tmp/takipi-install/wait-for-collector.sh
 
 RUN curl -o javajam.jar -L https://s3-us-west-1.amazonaws.com/overops/javajam.jar
 
-ENTRYPOINT ./tmp/takipi-install/wait-for-collector.sh $SECRET_KEY_ENV
+ENTRYPOINT /tmp/takipi-install/wait-for-collector.sh $SECRET_KEY_ENV
