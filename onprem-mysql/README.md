@@ -23,3 +23,8 @@ Once the server is up, you can access the OverOps UI by going to http://localhos
 ```
 127.0.0.1       analysis-server
 ```
+
+Username and password are as follows:
+
+Username: `admin@takipi.com`
+Password: `123456`
