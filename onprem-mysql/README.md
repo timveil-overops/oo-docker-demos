@@ -9,7 +9,7 @@ docker-compose build --no-cache
 
 Start the images
 ```
-docker-compose up
+docker-compose up 
 ```
 
 Stop and destroy the images
@@ -18,7 +18,7 @@ docker-compose down
 ```
 
 
-Once the server is up, you can access the OverOps UI by going to http://localhost:8080 or http://analysis-server:8080.  You may need to add the following entry to your hosts file.
+Once the server is up, you can access the OverOps UI by going to http://localhost:8080/login.html or http://analysis-server:8080/login.html.  You may need to add the following entry to your hosts file.
 
 ```
 127.0.0.1       analysis-server
