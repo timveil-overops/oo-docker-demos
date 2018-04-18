@@ -9,7 +9,7 @@ services:
       - "6060:6060"
   agent-java-jam:
     build:
-      context: ./agent-java-jam
+      context: ./agent-java
       args:
           - A_SECRET_KEY=${SECRET_KEY}
     depends_on:
