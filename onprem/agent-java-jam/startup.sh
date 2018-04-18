@@ -17,6 +17,6 @@ wget -O - -o /dev/null "http://analysis-server:8080/app/download?t=inst" | bash 
 
 /etc/init.d/filebeat start
 
-#java -agentlib:TakipiAgent -Dtakipi.name=JavaJam -Dtakipi.deployment.name=v1.0 -Dtakipi.debug.logconsole -jar javajam.jar
+java -agentlib:TakipiAgent -Dtakipi.name=JavaJam -Dtakipi.deployment.name=v1.0 -Dtakipi.debug.logconsole -jar overops-event-generator.jar
 
-tail -f /dev/null
+#tail --retry -f -n +1 /tmp/takipi-install/overops-event-generator.log

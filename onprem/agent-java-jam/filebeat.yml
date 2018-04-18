@@ -15,4 +15,4 @@ filebeat.prospectors:
 - type: log
   enabled: true
   paths:
-    - /var/log/*.log
+    - /tmp/takipi-install/overops-event-generator.log

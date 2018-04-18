@@ -9,6 +9,6 @@ RUN curl -Ls /dev/null http://get.takipi.com/takipi-t4c-installer | bash /dev/st
 
 RUN /opt/takipi/etc/takipi-setup-machine-name saas-oneliner
 
-RUN curl -o javajam.jar -L https://s3-us-west-1.amazonaws.com/overops/javajam.jar
+RUN curl -o overops-event-generator.jar -L https://s3.amazonaws.com/overops-event-generator/overops-event-generator-0.0.1-SNAPSHOT.jar
 
-CMD java -agentlib:TakipiAgent -Dtakipi.name=saas-oneliner -Dtakipi.deployment.name=v1.0 -Dtakipi.debug.logconsole -jar javajam.jar
+CMD java -agentlib:TakipiAgent -Dtakipi.name=saas-oneliner -Dtakipi.deployment.name=v1.0 -Dtakipi.debug.logconsole -jar overops-event-generator.jar
