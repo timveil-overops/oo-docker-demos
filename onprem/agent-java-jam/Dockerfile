@@ -9,10 +9,12 @@ RUN echo "Secret Key: $SECRET_KEY_ENV"
 
 RUN mkdir -p /tmp/takipi-install
 
-COPY wait-for-collector.sh /tmp/takipi-install
+ADD startup.sh /tmp/takipi-install
 
-RUN chmod a+x /tmp/takipi-install/wait-for-collector.sh
+RUN sed -i 's/\r$//' /tmp/takipi-install/startup.sh && chmod a+x /tmp/takipi-install/startup.sh
 
-RUN curl -o javajam.jar -L https://s3-us-west-1.amazonaws.com/overops/javajam.jar
+RUN curl -o /tmp/takipi-install/javajam.jar -L https://s3-us-west-1.amazonaws.com/overops/javajam.jar
 
-ENTRYPOINT /tmp/takipi-install/wait-for-collector.sh $SECRET_KEY_ENV
+WORKDIR /tmp/takipi-install
+
+ENTRYPOINT /tmp/takipi-install/startup.sh $SECRET_KEY_ENV

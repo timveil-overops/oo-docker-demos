@@ -11,10 +11,10 @@ RUN echo "Secret Key: $SECRET_KEY_ENV"
 
 RUN mkdir -p /tmp/takipi-install
 
-COPY wait-for-analysis-server.sh /tmp/takipi-install
+ADD startup.sh /tmp/takipi-install
 
-RUN chmod a+x /tmp/takipi-install/wait-for-analysis-server.sh
+RUN sed -i 's/\r$//' /tmp/takipi-install/startup.sh && chmod a+x /tmp/takipi-install/startup.sh
 
-ENTRYPOINT /tmp/takipi-install/wait-for-analysis-server.sh $SECRET_KEY_ENV
+WORKDIR /tmp/takipi-install
 
-
+ENTRYPOINT /tmp/takipi-install/startup.sh $SECRET_KEY_ENV
