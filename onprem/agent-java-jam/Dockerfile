@@ -7,6 +7,13 @@ ENV SECRET_KEY_ENV=$A_SECRET_KEY
 
 RUN echo "Secret Key: $SECRET_KEY_ENV"
 
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-amd64.deb \
+ && dpkg -i filebeat-${FILEBEAT_VERSION}-amd64.deb \
+ && rm filebeat-${FILEBEAT_VERSION}-amd64.deb
+
+ADD filebeat.yml /etc/filebeat/filebeat.yml
+RUN chmod 644 /etc/filebeat/filebeat.yml
+
 RUN mkdir -p /tmp/takipi-install
 
 ADD startup.sh /tmp/takipi-install

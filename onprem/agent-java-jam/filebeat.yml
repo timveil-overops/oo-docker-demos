@@ -1,0 +1,18 @@
+
+output.logstash:
+  hosts: ["elk:5044"]
+
+output.logstash.ssl:
+  enabled: false
+
+setup.kibana:
+  host: "elk:5601"
+  ssl.enabled: false
+
+setup.dashboards.enabled: true
+
+filebeat.prospectors:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/*.log
