@@ -13,4 +13,4 @@ RUN curl -o overops-event-generator.jar -L https://s3.amazonaws.com/overops-even
 
 RUN curl -sSL http://get.takipi.com/takipi-t4c-installer | bash /dev/stdin -i --sk=$A_SECRET_KEY --daemon_host=collector --daemon_port=6060 --machine_name=saas-oneliner-agent
 
-CMD java -agentlib:TakipiAgent -Dtakipi.name=JavaJam -Dtakipi.deployment.name=v1.0 -Dtakipi.debug.logconsole -jar overops-event-generator.jar
+CMD java -agentlib:TakipiAgent -Dtakipi.name=JavaGenerator -Dtakipi.deployment.name=v1.0 -Dtakipi.debug.logconsole -jar overops-event-generator.jar
