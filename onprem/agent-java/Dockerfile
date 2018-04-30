@@ -1,10 +1,10 @@
 FROM openjdk:8
 
+MAINTAINER Tim Veil <tjveil@gmail.com>
+
 ARG A_SECRET_KEY
 ENV SECRET_KEY_ENV=$A_SECRET_KEY
 ENV FILEBEAT_VERSION 6.2.2
-
-#RUN apt-get update
 
 RUN echo "Secret Key: $SECRET_KEY_ENV"
 

@@ -7,7 +7,7 @@ services:
           - A_SECRET_KEY=${SECRET_KEY}
     ports:
       - "6060:6060"
-  agent-java-jam:
+  agent-java:
     build:
       context: ./agent-java
       args:

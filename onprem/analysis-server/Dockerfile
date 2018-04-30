@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-#RUN apt-get update
+MAINTAINER Tim Veil <tjveil@gmail.com>
 
 RUN wget https://s3.amazonaws.com/app-takipi-com/deploy/takipi-server/takipi-server-java.tar.gz
 

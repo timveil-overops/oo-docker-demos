@@ -1,8 +1,8 @@
 FROM centos:7
 
-ARG A_SECRET_KEY
+MAINTAINER Tim Veil <tjveil@gmail.com>
 
-#RUN yum update -y
+ARG A_SECRET_KEY
 
 # netstat is used by instsaller. not required, but nice to have.
 RUN yum install -y java-1.8.0-openjdk.x86_64 net-tools

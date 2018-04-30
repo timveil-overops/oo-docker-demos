@@ -1,10 +1,10 @@
 FROM openjdk:8
 
+MAINTAINER Tim Veil <tjveil@gmail.com>
+
 ARG A_SECRET_KEY
 ENV TAKIPI_HOME /opt/takipi
 ENV SECRET_KEY_ENV=$A_SECRET_KEY
-
-#RUN apt-get update
 
 RUN echo "Takipi Home: $TAKIPI_HOME"
 RUN echo "Secret Key: $SECRET_KEY_ENV"

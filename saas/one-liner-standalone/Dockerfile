@@ -1,5 +1,7 @@
 FROM centos:7
 
+MAINTAINER Tim Veil <tjveil@gmail.com>
+
 ENV SECRET_KEY <YOUR_SECRET_KEY>
 
 # netstat is used by instsaller. not required, but nice to have.
