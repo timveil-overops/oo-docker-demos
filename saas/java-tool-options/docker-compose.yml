@@ -1,0 +1,18 @@
+version: '3'
+services:
+  collector:
+    build:
+      context: ./collector
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    ports:
+      - "6060:6060"
+  agent-java:
+    environment:
+      - JAVA_TOOL_OPTIONS=-agentlib:TakipiAgent
+    build:
+      context: ./agent-java
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - collector
