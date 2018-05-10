@@ -1,5 +1,7 @@
 # Instructions
-This demo shows how to spin up a container and monitor a process without installing any OverOps software directly inside the container.  It leverages the volume mount capabilities of docker and the remote collector concept to spin up a very light weight container.  It also takes advantage of a number of OverOps and JVM environmet variables to eliminate the need for any command line arguments. To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.  In addition you will need to modify the following line in the `docker-compose.xml`.
+This demo shows how to monitor a process without installing any OverOps software directly inside the container running the JVM.  It leverages the volume mount capabilities of docker and the remote collector concept to spin up a very light weight container.  It also takes advantage of a number of OverOps and JVM environment variables to eliminate the need for any command line arguments.  This can be very useful if you do not have access to a `Dockerfile` for a service but rather a pre-build image or you are deploying to an environment like Kubernetes. 
+
+To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.  In addition you will need to modify the following line in the `docker-compose.xml`.
 
 ```
 volumes:
