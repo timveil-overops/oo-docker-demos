@@ -9,6 +9,4 @@ RUN wget http://app-takipi-com.s3.amazonaws.com/deploy/takipi-storage/takipi-sto
 
 RUN tar zxvf takipi-storage-latest.tar.gz -C /opt
 
-RUN /opt/takipi-storage/etc/takipi-hybrid-installer -v
-
 CMD java -jar /opt/takipi-storage/lib/takipi-storage.jar server /opt/takipi-storage/settings.yml
