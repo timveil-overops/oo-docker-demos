@@ -1,0 +1,37 @@
+version: '3'
+services:
+  analysis-server:
+    build:
+      context: ./analysis-server
+    ports:
+      - "8080:8080"
+  collector:
+    build:
+      context: ./collector
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    ports:
+      - "6060:6060"
+    depends_on:
+      - analysis-server
+  agent-java:
+    build:
+      context: ./agent-java
+      args:
+          - A_SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - collector
+  #agent-scala:
+    #build:
+      #context: ./agent-scala
+      #args:
+          #- A_SECRET_KEY=${SECRET_KEY}
+    #depends_on:
+      #- collector
+  elk:
+    build:
+      context: ./elk
+    ports:
+      - "5601:5601"
+      - "9200:9200"
+      - "5044:5044"
