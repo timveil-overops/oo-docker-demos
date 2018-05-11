@@ -3,6 +3,8 @@ services:
   storage:
     build:
       context: ./storage
+    volumes:
+      - /Users/timveil/dev/takipi/hybrid-storage:/opt/takipi-storage/storage
     ports:
       - "8080:8080"
       - "8081:8081"
