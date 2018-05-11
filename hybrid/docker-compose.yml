@@ -1,5 +1,11 @@
 version: '3'
 services:
+  storage:
+    build:
+      context: ./storage
+    ports:
+      - "8080:8080"
+      - "8081:8081"
   collector:
     build:
       context: ./collector
@@ -7,8 +13,6 @@ services:
           - A_SECRET_KEY=${SECRET_KEY}
     ports:
       - "6060:6060"
-    depends_on:
-      - analysis-server
   java-agent:
     build:
       context: ./agent-java

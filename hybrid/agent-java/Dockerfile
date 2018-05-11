@@ -1,0 +1,16 @@
+FROM centos:7
+
+MAINTAINER Tim Veil <tjveil@gmail.com>
+
+ARG A_SECRET_KEY
+
+# netstat is used by instsaller. not required, but nice to have.
+RUN yum install -y java-1.8.0-openjdk.x86_64 net-tools
+
+RUN echo "Secret Key: $A_SECRET_KEY"
+
+RUN curl -o overops-event-generator.jar -L https://s3.amazonaws.com/overops-event-generator/overops-event-generator-0.0.1-SNAPSHOT.jar
+
+RUN curl -sSL http://get.takipi.com/takipi-t4c-installer | bash /dev/stdin -i --sk=$A_SECRET_KEY --daemon_host=collector --daemon_port=6060 --machine_name=hybrid-agent
+
+CMD java -agentlib:TakipiAgent -Dtakipi.name=JavaGenerator -Dtakipi.deployment.name=v1.0 -Dtakipi.debug.logconsole -jar overops-event-generator.jar
