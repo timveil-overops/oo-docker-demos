@@ -30,10 +30,10 @@ services:
           - A_SECRET_KEY=${SECRET_KEY}
     depends_on:
       - collector
-  agent-scala:
-    build:
-      context: ./agent-scala
-      args:
-          - A_SECRET_KEY=${SECRET_KEY}
-    depends_on:
-      - collector
+#  agent-scala:
+#    build:
+#      context: ./agent-scala
+#      args:
+#          - A_SECRET_KEY=${SECRET_KEY}
+#    depends_on:
+#      - collector
