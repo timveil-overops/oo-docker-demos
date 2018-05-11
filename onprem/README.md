@@ -2,7 +2,6 @@
 The on-prem demo includes a docker image for the analysis server, remote collector and two agents (one java and one scala).  To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.
 
 Build the images
-
 ```
 docker-compose build --no-cache
 ```

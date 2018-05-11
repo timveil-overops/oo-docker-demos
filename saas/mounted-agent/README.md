@@ -11,7 +11,6 @@ volumes:
 Here `/Users/timveil/dev/takipi/t4c-agent` is the path on my local machine where I have unzipped the OverOps for Containers agent (T4C).  You need to update download, unzip and correct this path for your machine.
 
 Build the images
-
 ```
 docker-compose build --no-cache
 ```
