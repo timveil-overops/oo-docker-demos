@@ -1,7 +1,7 @@
 # Instructions
 The hybrid demo includes a docker image for a remote collector, a java agent and the storage server.  To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled.  This must be preformed by OverOps.
 
-This compose file also uses a volume mount for the storage server so that data and logs can be stored outside the container.  Currently update the following line with the correct path for your machine.
+This compose file also uses a volume mount for the storage server so that data and logs can be stored outside the container.  Update the following line with the correct path for your machine.
 
 ```
     volumes:
