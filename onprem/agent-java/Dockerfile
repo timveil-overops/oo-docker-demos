@@ -4,16 +4,8 @@ MAINTAINER Tim Veil <tjveil@gmail.com>
 
 ARG A_SECRET_KEY
 ENV SECRET_KEY_ENV=$A_SECRET_KEY
-ENV FILEBEAT_VERSION 6.2.2
 
 RUN echo "Secret Key: $SECRET_KEY_ENV"
-
-RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-amd64.deb \
- && dpkg -i filebeat-${FILEBEAT_VERSION}-amd64.deb \
- && rm filebeat-${FILEBEAT_VERSION}-amd64.deb
-
-ADD filebeat.yml /etc/filebeat/filebeat.yml
-RUN chmod 644 /etc/filebeat/filebeat.yml$
 
 RUN mkdir -p /tmp/takipi-install
 
