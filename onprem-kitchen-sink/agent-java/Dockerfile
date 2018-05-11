@@ -13,7 +13,7 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${
  && rm filebeat-${FILEBEAT_VERSION}-amd64.deb
 
 ADD filebeat.yml /etc/filebeat/filebeat.yml
-RUN chmod 644 /etc/filebeat/filebeat.yml$
+RUN chmod 644 /etc/filebeat/filebeat.yml
 
 RUN mkdir -p /tmp/takipi-install
 

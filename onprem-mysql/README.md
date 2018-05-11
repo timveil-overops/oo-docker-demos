@@ -27,5 +27,3 @@ Username and password are as follows:
 
 Username: `admin@takipi.com`
 Password: `123456`
-
-ELK http://localhost:5601/
