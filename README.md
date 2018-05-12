@@ -1,5 +1,5 @@
 # OverOps Docker Demos
 
 * [Hybrid](hybrid)
-* [On Prem](onprem)
+* [On Premise](onprem)
 * [SaaS](saas)
