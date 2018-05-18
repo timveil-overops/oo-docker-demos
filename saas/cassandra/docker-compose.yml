@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3'
 services:
   collector:
     build:
@@ -7,7 +7,7 @@ services:
           - A_SECRET_KEY=${SECRET_KEY}
     ports:
       - "6060:6060"
-  agent-java:
+  cassandra:
     volumes:
       - /Users/timveil/dev/takipi/t4c-agent:/opt/takipi
     environment:
@@ -16,8 +16,7 @@ services:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
       - TAKIPI_MASTER_HOST=collector
       - TAKIPI_MASTER_PORT=6060
-      - TAKIPI_ARGS="takipi.debug.logconsole,takipi.name=java-agent,takipi.deployment.name=v1.3.1"
-    build:
-      context: ./agent-java
+      - TAKIPI_ARGS="takipi.debug.logconsole,takipi.name=cassandra,takipi.deployment.name=cassandra-latest"
+    image: cassandra:latest
     depends_on:
       - collector
