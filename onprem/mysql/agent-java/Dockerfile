@@ -13,7 +13,7 @@ ADD startup.sh /tmp/takipi-install
 
 RUN sed -i 's/\r$//' /tmp/takipi-install/startup.sh && chmod a+x /tmp/takipi-install/startup.sh
 
-RUN curl -o /tmp/takipi-install/overops-event-generator.jar -L https://s3.amazonaws.com/overops-event-generator/overops-event-generator-0.0.1-SNAPSHOT.jar
+RUN curl -o /tmp/takipi-install/overops-event-generator.jar -L https://s3.amazonaws.com/overops-event-generator/overops-event-generator-0.0.2-SNAPSHOT.jar
 
 WORKDIR /tmp/takipi-install
 
