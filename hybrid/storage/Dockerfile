@@ -2,7 +2,7 @@ FROM centos:7
 
 MAINTAINER Tim Veil <tjveil@gmail.com>
 
-# netstat is used by instsaller. not required, but nice to have.
+# netstat is used by installer. not required, but nice to have.
 RUN yum install -y wget java-1.8.0-openjdk.x86_64 net-tools
 
 RUN wget http://app-takipi-com.s3.amazonaws.com/deploy/takipi-storage/takipi-storage-latest.tar.gz
