@@ -1,0 +1,18 @@
+To build the image run the following command. `SECRET_KEY` is a required build argument.  `COLLECTOR_PORT` is optional and defaults to `6060`.  `MACHINE_NAME` is optional and defaults to `collector`.
+
+```
+docker build --no-cache -t timveil/overops-remote-collector:latest --build-arg SECRET_KEY=<YOUR SECRET KEY> .
+```
+```
+docker build --no-cache -t timveil/overops-remote-collector:latest --build-arg SECRET_KEY=<YOUR SECRET KEY> --build-arg COLLECTOR_PORT=<YOUR COLLECTOR PORT> --build-arg MACHINE_NAME=<YOUR MACHINE NAME> .
+```
+
+To publish the image run the following command:
+```
+docker push timveil/overops-remote-collector:latest
+```
+
+To run the image execute the following command:
+```
+docker run timveil/overops-remote-collector
+```
