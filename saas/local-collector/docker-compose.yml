@@ -1,0 +1,7 @@
+version: '3'
+services:
+  local-collector:
+    image: timveil/overops-agent-local-collector:latest
+    environment:
+      - TAKIPI_SECRET_KEY=${SECRET_KEY}
+      - TAKIPI_MACHINE_NAME=local-collector

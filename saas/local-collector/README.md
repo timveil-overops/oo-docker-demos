@@ -1,0 +1,17 @@
+# Instructions
+This demo includes a docker image for the agent plus local collector.  To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.
+
+Build the images
+```
+docker-compose build --no-cache
+```
+
+Start the images
+```
+docker-compose up
+```
+
+Stop and destroy the images
+```
+docker-compose down
+```

@@ -16,6 +16,7 @@ services:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
       - TAKIPI_MASTER_HOST=collector
       - TAKIPI_MASTER_PORT=6060
+      - TAKIPI_MACHINE_NAME=cassandra-server
       - TAKIPI_ARGS="takipi.debug.logconsole,takipi.name=cassandra,takipi.deployment.name=cassandra-latest"
     depends_on:
       - collector
