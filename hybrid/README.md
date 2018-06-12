@@ -10,12 +10,6 @@ This compose file also uses a volume mount for the storage server so that data a
 
 When configuring the OverOps Storage Server via the UI, "Storage server address" should be `http://storage:8080`.  This is the address the collector needs.  "Web app-facing address" should be `http://localhost:8080`.  This is the address the UI needs.
 
-
-Build the images
-```
-docker-compose build --no-cache
-```
-
 Start the images
 ```
 docker-compose up
