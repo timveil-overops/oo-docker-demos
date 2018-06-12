@@ -6,4 +6,4 @@ RUN curl -o takipi-storage-latest.tar.gz -L http://app-takipi-com.s3.amazonaws.c
 
 RUN tar zxvf takipi-storage-latest.tar.gz -C /opt
 
-CMD java -jar /opt/takipi-storage/lib/takipi-storage.jar server /opt/takipi-storage/settings.yml
+ENTRYPOINT java -jar /opt/takipi-storage/lib/takipi-storage.jar server /opt/takipi-storage/settings.yml

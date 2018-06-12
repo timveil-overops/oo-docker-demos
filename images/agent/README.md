@@ -1,3 +1,5 @@
+*as a workaround for the install script, SECRET_KEY is used to build image then immediately removed; use TAKIPI_SECRET_KEY environment variable when running image to properly run collector*
+
 To build the image run the following command. `SECRET_KEY` and `COLLECTOR_HOST` are a required build arguments.  `COLLECTOR_PORT` is optional and defaults to `6060`.  `MACHINE_NAME` is optional and defaults to `agent`.
 ```
 docker build --no-cache -t timveil/overops-agent:latest --build-arg SECRET_KEY=<YOUR SECRET KEY> --build-arg COLLECTOR_HOST=<YOUR COLLECTOR HOST> .
@@ -13,5 +15,5 @@ docker push timveil/overops-agent:latest
 
 To run the image execute the following command:
 ```
-docker run timveil/overops-agent
+docker run -e TAKIPI_SECRET_KEY=<YOUR SECRET KEY> timveil/overops-agent
 ```
