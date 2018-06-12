@@ -3,7 +3,7 @@ services:
   collector:
     image: timveil/overops-remote-collector:latest
     environment:
-          - TAKIPI_SECRET_KEY=${SECRET_KEY}
+      - TAKIPI_SECRET_KEY=${SECRET_KEY}
     ports:
       - "6060:6060"
   cassandra:
