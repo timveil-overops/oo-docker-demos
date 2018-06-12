@@ -15,5 +15,5 @@ docker push timveil/overops-agent:latest
 
 To run the image execute the following command:
 ```
-docker run -e TAKIPI_SECRET_KEY=<YOUR SECRET KEY> timveil/overops-agent
+docker run -e TAKIPI_SECRET_KEY=<YOUR SECRET KEY> -e TAKIPI_MASTER_HOST=<YOUR COLLECTOR HOST> timveil/overops-agent
 ```

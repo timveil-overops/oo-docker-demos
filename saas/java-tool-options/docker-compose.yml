@@ -1,18 +1,16 @@
 version: '3.3'
 services:
   collector:
-    build:
-      context: ./collector
-      args:
-          - A_SECRET_KEY=${SECRET_KEY}
+    image: timveil/overops-remote-collector:latest
+    environment:
+       - TAKIPI_SECRET_KEY=${SECRET_KEY}
     ports:
       - "6060:6060"
   agent-java:
+    image: timveil/overops-agent:latest
     environment:
+      - TAKIPI_SECRET_KEY=${SECRET_KEY}
+      - TAKIPI_MASTER_HOST=collector
       - JAVA_TOOL_OPTIONS=-agentlib:TakipiAgent
-    build:
-      context: ./agent-java
-      args:
-          - A_SECRET_KEY=${SECRET_KEY}
     depends_on:
       - collector
