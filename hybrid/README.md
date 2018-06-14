@@ -22,7 +22,7 @@ docker-compose down
 ## Kubernetes or Swarm
 
 ## Start the Containers
-**As of today `docker stack deploy` does not process values stored on `.env` files.  The following works around that challenge:**
+**As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:**
 ```
 env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml hybrid-stack
 ```
