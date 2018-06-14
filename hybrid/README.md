@@ -1,21 +1,33 @@
-# Instructions
-The hybrid demo includes a docker image for a remote collector, a java agent and the storage server.  To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled.  This must be preformed by OverOps.
+# OverOps Hybrid Example
+This is an example OverOps hybrid deployment architecture.  This example includes an Agent, a Remote Collector and the Hybrid Storage Server.
 
-This compose file also uses a volume mount for the storage server so that data and logs can be stored outside the container.  Update the following line with the correct path for your machine.
+To begin, you must first update the values for `SECRET_KEY` and `VOLUME_SOURCE` in the `.env` file.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled.  This configuration must be preformed by OverOps.
 
-```
-    volumes:
-      - /Users/timveil/dev/takipi/hybrid-storage:/opt/takipi-storage/storage
-```
+When configuring the OverOps Storage Server via the UI, "Storage server address" should be `http://storage:8080`.  This is the address the collector needs.  The "Web app-facing address" should be `http://localhost:8080`.  This is the address the UI needs.
 
-When configuring the OverOps Storage Server via the UI, "Storage server address" should be `http://storage:8080`.  This is the address the collector needs.  "Web app-facing address" should be `http://localhost:8080`.  This is the address the UI needs.
+If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose
 
-Start the images
+## Docker Compose
+
+## Start the Containers
 ```
 docker-compose up
 ```
 
-Stop and destroy the images
+## Stop and Destroy the Containers
 ```
 docker-compose down
+```
+
+## Kubernetes or Swarm
+
+## Start the Containers
+As of today `docker stack deploy` does not process values stored on `.env` files.  The following works around that challenge:
+```
+env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml hybrid-stack
+```
+
+## Stop and Destroy the Containers
+```
+docker stack rm hybrid-stack
 ```

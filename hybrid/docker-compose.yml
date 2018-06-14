@@ -1,20 +1,20 @@
 version: '3.3'
 services:
   storage:
-    image: timveil/overops-hybrid-storage-server:latest
+    image: timveil/oo-docker-hybrid-storage:latest
     volumes:
-      - /Users/timveil/dev/takipi/hybrid-storage:/opt/takipi-storage/storage
+      - ${VOLUME_SOURCE}:/opt/takipi-storage/storage
     ports:
       - "8080:8080"
       - "8081:8081"
   collector:
-    image: timveil/overops-remote-collector:latest
+    image: timveil/oo-docker-remote-collector:latest
     environment:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
     ports:
       - "6060:6060"
   java-agent:
-    image: timveil/overops-agent:latest
+    image: timveil/oo-docker-agent:latest
     environment:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
       - TAKIPI_MASTER_HOST=collector
