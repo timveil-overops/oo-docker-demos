@@ -10,12 +10,12 @@ If you are using the latest edge channel of Docker, you can deploy directly to K
 ## Docker Compose
 
 ### Start the Containers
-```
+```bash
 docker-compose up
 ```
 
 ### Stop and Destroy the Containers
-```
+```bash
 docker-compose down
 ```
 
@@ -23,12 +23,12 @@ docker-compose down
 
 ### Start the Containers
 *As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:*
-```
+```bash
 env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml hybrid-stack
 ```
 
 ### Stop and Destroy the Containers
-```
+```bash
 docker stack rm hybrid-stack
 ```
 
