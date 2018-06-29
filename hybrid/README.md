@@ -1,5 +1,5 @@
 # OverOps Hybrid Example
-This is simple example of an OverOps "Hybrid" deployment.  The `docker-compose.xml` contains the following services:
+This is simple example of an OverOps "Hybrid" deployment.  The `docker-compose.yml` contains the following services:
 * `storage` - the OverOps Hybrid Storage server
 * `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
 * `agent` - an OverOps agent and sample error generator app
