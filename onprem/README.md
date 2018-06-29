@@ -1,5 +1,4 @@
-# On Premise Demos
+# OverOps OnPrem Demos
 
 * [Basic](basic) - H2 as backend
-* [Kitchen Sink](kitchen-sink) - OverOps + ELK
-* [MySQL](mysql) - MySQL as backend
+* [MySQL](mysql) - MySQL as backend - DO NOT USE
