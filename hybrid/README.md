@@ -2,7 +2,7 @@
 This is simple example of an OverOps "Hybrid" deployment.  The `docker-compose.yml` contains the following services:
 * `storage` - the OverOps Hybrid Storage server
 * `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
-* `agent` - an OverOps agent and sample error generator app
+* `agent` - an OverOps agent and sample event generator app
 
 ## Getting Started
 To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  Be sure to update the values for `SECRET_KEY` and `VOLUME_SOURCE`.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled (this must be preformed by OverOps).
