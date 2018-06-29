@@ -13,7 +13,7 @@ services:
       - "6060:6060"
     depends_on:
       - analysis-server
-  java-agent:
+  agent:
     image: timveil/overops-agent:latest
     environment:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
