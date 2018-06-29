@@ -53,5 +53,6 @@ Once the server is up, you can access the OverOps UI by going to `http://localho
 
 The default username and password are as follows:
 
-Username: `admin@takipi.com`
-Password: `123456`
+
+| Username | `admin@takipi.com` |
+| Password | `123456` |
