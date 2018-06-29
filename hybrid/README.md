@@ -10,7 +10,7 @@ To begin, you must first create a `.env` file and place it in the same directory
 ```properties
 # Sample .env file - You must update these values
 SECRET_KEY=your-very-own-overops-secret-key
-VOLUME_SOURCE=/path/to/hybrid-storage/on/host
+VOLUME_SOURCE=/path/on/host/to/hybrid-storage/
 ```
 
 When configuring the OverOps Storage Server via the UI, "Storage server address" should be `http://storage:8080`.  This is the address the Collector needs.  The "Web app-facing address" should be `http://localhost:8080`.  This is the address the UI needs.
