@@ -51,8 +51,9 @@ Once the server is up, you can access the OverOps UI by going to `http://localho
 127.0.0.1       analysis-server
 ```
 
-The default username and password are as follows:
+The default username and password are as follows: 
 
-| --- | --- |
+|   |   |
+| ------------- | ------------- |
 | Username | `admin@takipi.com` |
 | Password | `123456` |
