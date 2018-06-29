@@ -1,6 +1,7 @@
 # OverOps Hybrid Example
 This is an example OverOps Hybrid deployment architecture.  This example includes an Agent, a Remote Collector and the Hybrid Storage Server.
 
+## Getting Started
 To begin, you must first create a `.env` file and place it in the current directory.  Below is a sample `.env` file.  Be sure to update the values for `SECRET_KEY` and `VOLUME_SOURCE`.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled (this must be preformed by OverOps).
 
 ```properties
