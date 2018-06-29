@@ -13,7 +13,7 @@ services:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
     ports:
       - "6060:6060"
-  java-agent:
+  agent:
     image: timveil/oo-docker-agent:latest
     environment:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
