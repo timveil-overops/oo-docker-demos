@@ -5,7 +5,7 @@ To begin, you must first create a `.env` file and place it in the current direct
 
 ```properties
 # Sample .env file - You must update these values
-SECRET_KEY=S12345#INVALIDKEY#HAVETOBEREPLACED#1234
+SECRET_KEY=your-very-own-overops-secret-key
 VOLUME_SOURCE=/path/to/hybrid-storage/on/host
 ```
 
