@@ -4,4 +4,3 @@ services:
     image: timveil/oo-docker-local-collector:latest
     environment:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
-      - TAKIPI_MACHINE_NAME=local-collector
