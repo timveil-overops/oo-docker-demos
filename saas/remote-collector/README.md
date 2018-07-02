@@ -1,5 +1,5 @@
 # OverOps Remote Collector Example
-This is simple example of an OverOps SaaS deployment using a Remote Collector.  The `docker-compose.yml` contains the following services:
+This is a simple example of an OverOps SaaS deployment using a Remote Collector.  The `docker-compose.yml` contains the following services:
 * `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
 * `agent` - an OverOps agent and sample event generator app
 

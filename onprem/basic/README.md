@@ -1,5 +1,5 @@
 # OverOps OnPrem Example
-This is simple example of an OverOps "OnPrem" deployment.  The `docker-compose.yml` contains the following services:
+This is a simple example of an OverOps "OnPrem" deployment.  The `docker-compose.yml` contains the following services:
 * `analysis-server` - the OverOps backend server, supporting OverOps UI, etc
 * `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
 * `agent` - an OverOps agent and sample event generator app

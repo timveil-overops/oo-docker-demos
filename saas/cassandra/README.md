@@ -1,5 +1,5 @@
 # OverOps Cassandra Example
-This is simple example of using OverOps to monitor an external Docker image, in this case [Cassandra](https://hub.docker.com/_/cassandra/).  Instead of specifying the `agentlib` inside the container during as a JVM startup flag, this example uses the `JAVA_TOOL_OPTIONS` environment variable to auto attach to any JVM launched inside the container.  The `docker-compose.yml` contains the following services:
+This is a simple example of using OverOps to monitor an external Docker image, in this case [Cassandra](https://hub.docker.com/_/cassandra/).  Instead of specifying the `agentlib` inside the container during as a JVM startup flag, this example uses the `JAVA_TOOL_OPTIONS` environment variable to auto attach to any JVM launched inside the container.  The `docker-compose.yml` contains the following services:
 * `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
 * `cassandra` - an instance of Cassandra monitored by an OverOps agent mounted on the Docker host
 
