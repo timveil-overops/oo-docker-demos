@@ -7,7 +7,7 @@ services:
     ports:
       - "6060:6060"
   agent:
-    image: timveil/oo-docker-agent:latest
+    image: timveil/oo-docker-mounted-agent:latest
     volumes:
       - ${VOLUME_SOURCE}:/opt/takipi
     environment:

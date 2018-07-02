@@ -1,26 +1,44 @@
-# Instructions
-This demo shows how to monitor a process without installing any OverOps software directly inside the container running the JVM.  It leverages the volume mount capabilities of docker and the remote collector concept to spin up a very light weight container.  It also takes advantage of a number of OverOps and JVM environment variables to eliminate the need for any command line arguments.  This can be very useful if you do not have access to a `Dockerfile` for a service (eg. pre-built image) or you are deploying to an environment like Kubernetes. 
+# OverOps Mounted Agent Example
+This is a simple example of using OverOps to monitor an external Docker image, in this case [timveil/oo-docker-agent](https://hub.docker.com/r/timveil/oo-docker-mounted-agent/).  Instead of specifying the `agentlib` inside the container during as a JVM startup flag, this example uses the `JAVA_TOOL_OPTIONS` environment variable to auto attach to any JVM launched inside the container.  The `docker-compose.yml` contains the following services:
+* `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
+* `agent` - an instance of the event generator app monitored by an OverOps agent mounted on the Docker host
 
-To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.  In addition you will need to modify the following line in the `docker-compose.xml`.
+## Getting Started
+To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  Be sure to update the values for `SECRET_KEY` and `VOLUME_SOURCE`.  `VOLUME_SOURCE` is the path on the host machine where the  OverOps for Containers agent (T4C) is installed.
 
-```
-volumes:
-  - /Users/timveil/dev/takipi/t4c-agent:/opt/takipi
-```
-
-Here `/Users/timveil/dev/takipi/t4c-agent` is the path on my local machine where I have unzipped the OverOps for Containers agent (T4C).  You need to update download, unzip and correct this path for your machine.
-
-Build the images
-```
-docker-compose build --no-cache
+```properties
+# Sample .env file - You must update these values
+SECRET_KEY=your-very-own-overops-secret-key
+VOLUME_SOURCE=/path/on/host/to/oo-agent/
 ```
 
-Start the images
-```
+If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose.
+
+## Docker Compose
+
+### Start the Containers
+```bash
 docker-compose up
 ```
 
-Stop and destroy the images
-```
+### Stop and Destroy the Containers
+```bash
 docker-compose down
 ```
+
+## Kubernetes or Swarm
+
+### Start the Containers
+*As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:*
+```bash
+env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml mounted-agent-stack
+```
+
+### Stop and Destroy the Containers
+```bash
+docker stack rm mounted-agent-stack
+```
+
+## Docker Images
+* Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
+* Agent - [timveil/oo-docker-mounted-agent](https://hub.docker.com/r/timveil/oo-docker-mounted-agent/)
