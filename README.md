@@ -13,7 +13,6 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 * [Hybrid Deployment Model](hybrid) - Example of OO Hybrid deployment leveraging agent, remote collector and storage server in separate containers
 * On-Prem Deployment Model
     * [Basic](basic) - H2 as backend
-    * [MySQL](mysql) - MySQL as backend - DO NOT USE JUST YET :)
     
 
 ## Tips and Tricks
