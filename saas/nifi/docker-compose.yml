@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+  collector:
+    image: timveil/oo-docker-remote-collector:latest
+    environment:
+      - TAKIPI_SECRET_KEY=${SECRET_KEY}
+    ports:
+      - "6060:6060"
+  nifi:
+    image: apache/nifi
+    volumes:
+      - ${VOLUME_SOURCE}:/opt/takipi
+    environment:
+      - LD_LIBRARY_PATH=/opt/takipi/lib
+      - JAVA_TOOL_OPTIONS=-agentlib:TakipiAgent
+      - TAKIPI_SECRET_KEY=${SECRET_KEY}
+      - TAKIPI_COLLECTOR_HOST=collector
+      - TAKIPI_COLLECTOR_PORT=6060
+      - TAKIPI_MACHINE_NAME=nifi-container
+      - TAKIPI_ARGS="takipi.debug.logconsole"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - collector
