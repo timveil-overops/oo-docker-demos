@@ -1,27 +1,44 @@
-# Instructions
-This demo includes a docker image for the remote collector and Apache Cassandra.  Instead of specifying the `agentlib` inside the container during as a JVM startup flag, it uses the `JAVA_TOOL_OPTIONS` environment variable to auto attach to any launched JVM.
+# OverOps Cassandra Example
+This is a simple example of using OverOps to monitor an external Docker image, in this case [Cassandra](https://hub.docker.com/_/cassandra/).  Instead of specifying the `agentlib` inside the container during as a JVM startup flag, this example uses the `JAVA_TOOL_OPTIONS` environment variable to auto attach to any JVM launched inside the container.  The `docker-compose.yml` contains the following services:
+* `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
+* `cassandra` - an instance of Cassandra monitored by an OverOps agent mounted on the Docker host
 
-To begin, you must first update the value for `SECRET_KEY` in `.env` then run the following commands.  In addition you will need to modify the following line in the `docker-compose.xml`.
+## Getting Started
+To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  Be sure to update the values for `SECRET_KEY` and `VOLUME_SOURCE`.  `VOLUME_SOURCE` is the path on the host machine where the  OverOps for Containers agent (T4C) is installed.
 
-```
-volumes:
-  - /Users/timveil/dev/takipi/t4c-agent:/opt/takipi
-```
-
-Here `/Users/timveil/dev/takipi/t4c-agent` is the path on my local machine where I have unzipped the OverOps for Containers agent (T4C).  You need to update download, unzip and correct this path for your machine.
-
-
-Build the images
-```
-docker-compose build --no-cache
+```properties
+# Sample .env file - You must update these values
+SECRET_KEY=your-very-own-overops-secret-key
+VOLUME_SOURCE=/path/on/host/to/oo-agent/
 ```
 
-Start the images
-```
+If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose.
+
+## Docker Compose
+
+### Start the Containers
+```bash
 docker-compose up
 ```
 
-Stop and destroy the images
-```
+### Stop and Destroy the Containers
+```bash
 docker-compose down
 ```
+
+## Kubernetes or Swarm
+
+### Start the Containers
+*As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:*
+```bash
+env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml cassandra-stack
+```
+
+### Stop and Destroy the Containers
+```bash
+docker stack rm cassandra-stack
+```
+
+## Docker Images
+* Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
+* Cassandra - [cassandra](https://hub.docker.com/_/cassandra/)

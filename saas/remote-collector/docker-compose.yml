@@ -1,12 +1,5 @@
-version: '3.3'
+version: '3'
 services:
-  storage:
-    image: timveil/oo-docker-hybrid-storage:latest
-    volumes:
-      - ${VOLUME_SOURCE}:/opt/takipi-storage/storage
-    ports:
-      - "8080:8080"
-      - "8081:8081"
   collector:
     image: timveil/oo-docker-remote-collector:latest
     environment:

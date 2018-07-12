@@ -1,0 +1,6 @@
+version: '3'
+services:
+  local-collector:
+    image: timveil/oo-docker-local-collector:latest
+    environment:
+      - TAKIPI_SECRET_KEY=${SECRET_KEY}
