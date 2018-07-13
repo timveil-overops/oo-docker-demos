@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-  analysis-server:
+  server:
     image: timveil/oo-docker-onprem-server:latest
     ports:
       - "8080:8080"
@@ -8,11 +8,11 @@ services:
     image: timveil/oo-docker-onprem-collector:latest
     environment:
       - TAKIPI_SECRET_KEY=${SECRET_KEY}
-      - TAKIPI_BASE_URL=http://analysis-server:8080
+      - TAKIPI_BASE_URL=http://server:8080
     ports:
       - "6060:6060"
     depends_on:
-      - analysis-server
+      - server
   agent:
     image: timveil/oo-docker-agent:latest
     environment:

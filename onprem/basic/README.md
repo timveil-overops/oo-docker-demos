@@ -1,6 +1,6 @@
 # OverOps OnPrem Example
 This is a simple example of an OverOps "OnPrem" deployment.  The `docker-compose.yml` contains the following services:
-* `analysis-server` - the OverOps backend server, supporting OverOps UI, etc
+* `server` - the OverOps backend server, supporting OverOps UI, etc
 * `collector` - an OverOps Collector running in a dedicated container (aka Remote Collector)
 * `agent` - an OverOps Agent and sample event generator app
 
@@ -45,10 +45,10 @@ docker stack rm onprem-stack
 * Agent - [timveil/oo-docker-agent](https://hub.docker.com/r/timveil/oo-docker-agent/)
 
 ## Logging In to the OnPrem Server
-Once the server is up, you can access the OverOps UI by going to `http://localhost:8080/login.html` or `http://analysis-server:8080/login.html`.  You may want to add the following entry to your hosts file.
+Once the server is up, you can access the OverOps UI by going to `http://localhost:8080/login.html` or `http://server:8080/login.html`.  You may want to add the following entry to your hosts file.
 
 ```
-127.0.0.1       analysis-server
+127.0.0.1       server
 ```
 
 The default username and password are as follows: 
