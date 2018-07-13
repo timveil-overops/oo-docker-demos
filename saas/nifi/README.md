@@ -41,4 +41,4 @@ docker stack rm nifi-stack
 
 ## Docker Images
 * Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
-* Nifi - [apache/nifi](https://hub.docker.com/r/apache/nifi/)
+* NiFi - [apache/nifi](https://hub.docker.com/r/apache/nifi/)

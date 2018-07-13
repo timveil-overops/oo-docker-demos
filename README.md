@@ -9,7 +9,7 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
     * [Local Collector Example](saas/local-collector) - Agent and Collector are installed in the same container.  This configuration is known as *Local* Collector.
     * [Mounted Agent Example](saas/mounted-agent) - Uses volume mount and various environment variables to monitor jvm without installing OO agent inside container.
     * [Cassandra Example](saas/cassandra) - Example using OO to monitor Cassandra running inside container.
-    * [NiFi Example](saas/nifi) - Example using OO to monitor Apache Nifi running inside container.
+    * [NiFi Example](saas/nifi) - Example using OO to monitor Apache NiFi running inside container.
 * [Hybrid Deployment Model](hybrid) - Example of OO Hybrid deployment leveraging agent, remote collector and storage server in separate containers
 * On-Prem Deployment Model
     * [Basic](basic) - H2 as backend
