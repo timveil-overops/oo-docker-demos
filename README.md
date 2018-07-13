@@ -7,12 +7,12 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 * SaaS Deployment Model
     * [Remote Collector Example](saas/remote-collector) - Agent and Collector deployed in separate containers.  This configuration is known as *Remote* Collector.
     * [Local Collector Example](saas/local-collector) - Agent and Collector are installed in the same container.  This configuration is known as *Local* Collector.
-    * [Mounted Agent Example](saas/mounted-agent) - Uses volume mount and various environment variables to monitor jvm without installing OO agent inside container.
-    * [Cassandra Example](saas/cassandra) - Example using OO to monitor Cassandra running inside container.
-    * [NiFi Example](saas/nifi) - Example using OO to monitor Apache NiFi running inside container.
-* [Hybrid Deployment Model](hybrid) - Example of OO Hybrid deployment leveraging agent, remote collector and storage server in separate containers.
+    * [Mounted Agent Example](saas/mounted-agent) - Uses volume mount and various environment variables to monitor JVM without installing OO Agent inside container.
+    * [Cassandra Example](saas/cassandra) - Uses OO to monitor Cassandra running inside container.
+    * [NiFi Example](saas/nifi) - Uses OO to monitor Apache NiFi running inside container.
+* [Hybrid Deployment Model](hybrid) - Example of OO Hybrid deployment using Agent, *Remote* Collector and Storage Server in separate containers.
 * On-Prem Deployment Model
-    * [Basic](basic) - Includes OO Server, Agent and *Remote Collector*.  H2 is used as the OO Server database.
+    * [Basic](basic) - Example of OO On-Prem deployment using Server, Agent and *Remote* Collector in separate containers.  H2 is used as the OO Server database.
     
 
 ## Tips and Tricks
