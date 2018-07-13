@@ -1,10 +1,10 @@
 # OverOps Mounted Agent Example
 This is a simple example of using OverOps to monitor an external Docker image, in this case [timveil/oo-docker-mounted-agent](https://hub.docker.com/r/timveil/oo-docker-mounted-agent/).  Instead of specifying the `agentlib` inside the container during as a JVM startup flag, this example uses the `JAVA_TOOL_OPTIONS` environment variable to auto attach to any JVM launched inside the container.  The `docker-compose.yml` contains the following services:
-* `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
-* `agent` - an instance of the event generator app monitored by an OverOps agent mounted on the Docker host
+* `collector` - an OverOps Collector running in a dedicated container (aka Remote Collector)
+* `agent` - an instance of the event generator app monitored by an OverOps Agent mounted on the Docker host
 
 ## Getting Started
-To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  Be sure to update the values for `SECRET_KEY` and `VOLUME_SOURCE`.  `VOLUME_SOURCE` is the path on the host machine where the  OverOps for Containers agent (T4C) is installed.
+To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  Be sure to update the values for `SECRET_KEY` and `VOLUME_SOURCE`.  `VOLUME_SOURCE` is the path on the host machine where the OverOps for Containers agent (T4C) is installed.
 
 ```properties
 # Sample .env file - You must update these values

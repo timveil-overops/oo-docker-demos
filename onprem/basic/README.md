@@ -1,8 +1,8 @@
 # OverOps OnPrem Example
 This is a simple example of an OverOps "OnPrem" deployment.  The `docker-compose.yml` contains the following services:
 * `analysis-server` - the OverOps backend server, supporting OverOps UI, etc
-* `collector` - an OverOps collector running in a dedicated container (aka Remote Collector)
-* `agent` - an OverOps agent and sample event generator app
+* `collector` - an OverOps Collector running in a dedicated container (aka Remote Collector)
+* `agent` - an OverOps Agent and sample event generator app
 
 ## Getting Started
 To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  The sample `SECRET_KEY` included below is a valid, limited trial key.
