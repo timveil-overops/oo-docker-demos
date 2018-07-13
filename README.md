@@ -12,7 +12,7 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
     * [NiFi Example](saas/nifi) - Example using OO to monitor Apache NiFi running inside container.
 * [Hybrid Deployment Model](hybrid) - Example of OO Hybrid deployment leveraging agent, remote collector and storage server in separate containers.
 * On-Prem Deployment Model
-    * [Basic](basic) - Includes OO Server, Agent and *Remote Collector*.  H2 is used as OO Server backend.
+    * [Basic](basic) - Includes OO Server, Agent and *Remote Collector*.  H2 is used as the OO Server database.
     
 
 ## Tips and Tricks
