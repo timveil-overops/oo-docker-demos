@@ -17,8 +17,14 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 
 ## Tips and Tricks
 
-You can easily delete previously download images for these examples with the following command:
+You can easilygrep delete previously download images for these examples with the following command:
 
 ```bash
 docker images -a | grep "timveil" | awk '{print $3}' | xargs docker rmi
+```
+
+or 
+
+```
+docker system prune -a
 ```
