@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+
   namenode:
     image: timveil/docker-hadoop-namenode
     environment:
