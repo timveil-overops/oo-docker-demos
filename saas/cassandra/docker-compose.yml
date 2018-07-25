@@ -4,7 +4,7 @@ services:
   collector:
     image: timveil/oo-docker-remote-collector:latest
     env_file:
-      - .env
+      - overops-key.env
     ports:
       - "6060:6060"
 
@@ -16,14 +16,11 @@ services:
   cassandra:
     image: cassandra:latest
     env_file:
-      - .env
       - overops-agent.env
     environment:
       - TAKIPI_ARGS=takipi.debug.logconsole,takipi.machine.name=cassandra-container
     volumes:
       - sidecar_volume:/sidecar
-    depends_on:
-      - sidecar
 
 volumes:
   sidecar_volume:
