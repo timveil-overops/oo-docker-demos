@@ -32,7 +32,7 @@ docker-compose down
 ### Start the Containers
 *As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:*
 ```bash
-env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml mounted-agent-stack
+env $(cat *.env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml mounted-agent-stack
 ```
 
 ### Stop and Destroy the Containers
