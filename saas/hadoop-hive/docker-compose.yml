@@ -6,12 +6,12 @@ services:
     environment:
       - CLUSTER_NAME=test
       - TAKIPI_ARGS=takipi.name=hadoop-namenode,takipi.machine.name=namenode-container,takipi.deployment.name=hadoop-2.8.4
-    volumes:
-      - namenode_volume:/hadoop/dfs/name
-      - sidecar_volume:/sidecar
     env_file:
       - hadoop.env
       - overops-agent.env
+    volumes:
+      - namenode_volume:/hadoop/dfs/name
+      - sidecar_volume:/sidecar
     ports:
       - "50070:50070"
 
@@ -20,12 +20,12 @@ services:
     environment:
       - SERVICE_PRECONDITION=namenode:50070
       - TAKIPI_ARGS=takipi.name=hadoop-datanode,takipi.machine.name=datanode-container,takipi.deployment.name=hadoop-2.8.4
-    volumes:
-      - datanode_volume:/hadoop/dfs/data
-      - sidecar_volume:/sidecar
     env_file:
       - hadoop.env
       - overops-agent.env
+    volumes:
+      - datanode_volume:/hadoop/dfs/data
+      - sidecar_volume:/sidecar
     ports:
       - "50075:50075"
 
@@ -34,11 +34,11 @@ services:
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075
       - TAKIPI_ARGS=takipi.name=yarn-resourcemanager,takipi.machine.name=resourcemanager-container,takipi.deployment.name=hadoop-2.8.4
-    volumes:
-      - sidecar_volume:/sidecar
     env_file:
       - yarn.env
       - overops-agent.env
+    volumes:
+      - sidecar_volume:/sidecar
     ports:
       - "8088:8088"
 
@@ -47,11 +47,11 @@ services:
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
       - TAKIPI_ARGS=takipi.name=yarn-nodemanager,takipi.machine.name=nodemanager-container,takipi.deployment.name=hadoop-2.8.4
-    volumes:
-      - sidecar_volume:/sidecar
     env_file:
       - yarn.env
       - overops-agent.env
+    volumes:
+      - sidecar_volume:/sidecar
     ports:
       - "8042:8042"
 
@@ -60,12 +60,12 @@ services:
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
       - TAKIPI_ARGS=takipi.name=yarn-historyserver,takipi.machine.name=historyserver-container,takipi.deployment.name=hadoop-2.8.4
-    volumes:
-      - historyserver_volume:/hadoop/yarn/timeline
-      - sidecar_volume:/sidecar
     env_file:
       - yarn.env
       - overops-agent.env
+    volumes:
+      - historyserver_volume:/hadoop/yarn/timeline
+      - sidecar_volume:/sidecar
     ports:
       - "8188:8188"
 
@@ -74,12 +74,12 @@ services:
     environment:
       - SERVICE_PRECONDITION=metastore:9083
       - TAKIPI_ARGS=takipi.name=hive-hs2,takipi.machine.name=hs2-container,takipi.deployment.name=hive-2.3.3
-    volumes:
-      - sidecar_volume:/sidecar
     env_file:
       - hadoop.env
       - hive.env
       - overops-agent.env
+    volumes:
+      - sidecar_volume:/sidecar
     ports:
       - "10000:10000"
       - "10002:10002"
@@ -89,12 +89,12 @@ services:
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 metastore-db:5432
       - TAKIPI_ARGS=takipi.name=hive-metastore,takipi.machine.name=metastore-container,takipi.deployment.name=hive-2.3.3
-    volumes:
-      - sidecar_volume:/sidecar
     env_file:
       - hadoop.env
       - hive.env
       - overops-agent.env
+    volumes:
+      - sidecar_volume:/sidecar
     ports:
       - "9083:9083"
 
