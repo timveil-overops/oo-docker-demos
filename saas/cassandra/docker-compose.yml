@@ -11,7 +11,7 @@ services:
   sidecar:
     image: timveil/oo-docker-agent-sidecar
     volumes:
-      - sidecar_volume:/opt/takipi
+      - sidecar-volume:/opt/takipi
 
   cassandra:
     image: cassandra:latest
@@ -20,7 +20,7 @@ services:
     environment:
       - TAKIPI_ARGS=takipi.debug.logconsole,takipi.machine.name=cassandra-container
     volumes:
-      - sidecar_volume:/sidecar
+      - sidecar-volume:/sidecar
 
 volumes:
-  sidecar_volume:
+  sidecar-volume:
