@@ -5,7 +5,7 @@ docker images -a | grep "timveil" | awk '{print $3}' | xargs docker rmi
 or 
 
 ```bash
-docker system prune -a
+docker system prune -a -f --volumes
 ```
 ```
 _ => .
