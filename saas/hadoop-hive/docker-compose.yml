@@ -116,8 +116,7 @@ services:
       - "6060:6060"
 
   sidecar:
-    build:
-      context: ./sidecar
+    image: timveil/oo-docker-agent-sidecar
     volumes:
       - sidecar_volume:/opt/takipi
 
