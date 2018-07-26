@@ -1,22 +1,25 @@
 version: '3.3'
 services:
+
   storage:
     image: timveil/oo-docker-hybrid-storage:latest
     volumes:
-      - ${VOLUME_SOURCE}:/opt/takipi-storage/storage
+      - storage-volume:/opt/takipi-storage/storage
     ports:
       - "8080:8080"
       - "8081:8081"
+
   collector:
     image: timveil/oo-docker-remote-collector:latest
-    environment:
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
+    env_file:
+      - overops-key.env
     ports:
       - "6060:6060"
+
+  # default agent properties are sufficient
   agent:
     image: timveil/oo-docker-agent:latest
-    environment:
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
-      - TAKIPI_COLLECTOR_HOST=collector
-    depends_on:
-      - collector
+
+# using docker named volume mount to store hybrid data; could alternatively use a bind mound on docker host
+volumes:
+  storage-volume:
