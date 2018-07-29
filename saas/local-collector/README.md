@@ -24,7 +24,7 @@ docker-compose up
 docker-compose down
 ```
 
-## Kubernetes or Swarm
+## Kubernetes or Swarm (Experimental)
 
 ### Start the Containers
 *As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:*
