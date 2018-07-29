@@ -14,11 +14,11 @@ services:
       - sidecar-volume:/opt/takipi
 
   cassandra:
-    image: cassandra:latest
+    image: bitnami/cassandra
     env_file:
       - overops-agent.env
     environment:
-      - TAKIPI_ARGS=takipi.debug.logconsole,takipi.machine.name=cassandra-container
+      - TAKIPI_ARGS=takipi.debug.logconsole,takipi.server.name=cassandra-container
     volumes:
       - sidecar-volume:/sidecar
 

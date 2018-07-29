@@ -14,13 +14,15 @@ services:
       - sidecar-volume:/opt/takipi
 
   agent:
-    image: timveil/oo-docker-mounted-agent:latest
+    image: timveil/overops-event-generator
     env_file:
       - overops-agent.env
     environment:
-      - TAKIPI_ARGS=takipi.machine.name=mounted-agent-container
+      - TAKIPI_ARGS=takipi.server.name=mounted-agent-container
     volumes:
       - sidecar-volume:/sidecar
+    ports:
+      - "8080:8080"
 
 volumes:
   sidecar-volume:
