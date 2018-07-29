@@ -3,11 +3,11 @@ This is a simple example of an OverOps SaaS deployment using a Local Collector. 
 * `local-collector` - an OverOps Agent and Collector running in the same container container (aka Local Collector)
 
 ## Getting Started
-To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  Be sure to update the value for `SECRET_KEY`.
+To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  Be sure to update the value for `TAKIPI_SECRET_KEY`.
 
 ```properties
 # Sample .env file - You must update these values
-SECRET_KEY=your-very-own-overops-secret-key
+TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
 ```
 
 If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose.
