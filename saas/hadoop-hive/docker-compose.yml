@@ -11,7 +11,6 @@ services:
       - hadoop.env
       - overops-agent.env
     volumes:
-      - namenode_volume:/hadoop/dfs/name
       - sidecar_volume:/sidecar
     ports:
       - "50070:50070"
@@ -25,7 +24,6 @@ services:
       - hadoop.env
       - overops-agent.env
     volumes:
-      - datanode_volume:/hadoop/dfs/data
       - sidecar_volume:/sidecar
     ports:
       - "50075:50075"
@@ -65,7 +63,6 @@ services:
       - yarn.env
       - overops-agent.env
     volumes:
-      - historyserver_volume:/hadoop/yarn/timeline
       - sidecar_volume:/sidecar
     ports:
       - "8188:8188"
@@ -115,7 +112,4 @@ services:
       - sidecar_volume:/opt/takipi
 
 volumes:
-  namenode_volume:
-  datanode_volume:
-  historyserver_volume:
   sidecar_volume:
