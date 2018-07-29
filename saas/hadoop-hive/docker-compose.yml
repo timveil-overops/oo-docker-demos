@@ -8,7 +8,8 @@ services:
       - CLUSTER_NAME=test
       - TAKIPI_ARGS=takipi.name=hadoop-namenode,takipi.machine.name=namenode-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
-      - hadoop.env
+      - core.env
+      - yarn.env
       - overops-agent.env
     volumes:
       - sidecar_volume:/sidecar
@@ -21,7 +22,8 @@ services:
       - SERVICE_PRECONDITION=namenode:50070
       - TAKIPI_ARGS=takipi.name=hadoop-datanode,takipi.machine.name=datanode-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
-      - hadoop.env
+      - core.env
+      - yarn.env
       - overops-agent.env
     volumes:
       - sidecar_volume:/sidecar
@@ -34,6 +36,7 @@ services:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075
       - TAKIPI_ARGS=takipi.name=yarn-resourcemanager,takipi.machine.name=resourcemanager-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
+      - core.env
       - yarn.env
       - overops-agent.env
     volumes:
@@ -47,6 +50,7 @@ services:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
       - TAKIPI_ARGS=takipi.name=yarn-nodemanager,takipi.machine.name=nodemanager-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
+      - core.env
       - yarn.env
       - overops-agent.env
     volumes:
@@ -60,6 +64,7 @@ services:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
       - TAKIPI_ARGS=takipi.name=yarn-historyserver,takipi.machine.name=historyserver-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
+      - core.env
       - yarn.env
       - overops-agent.env
     volumes:
@@ -73,7 +78,8 @@ services:
       - SERVICE_PRECONDITION=metastore:9083
       - TAKIPI_ARGS=takipi.name=hive-hs2,takipi.machine.name=hs2-container,takipi.deployment.name=hive-2.3.3
     env_file:
-      - hadoop.env
+      - core.env
+      - yarn.env
       - hive.env
       - overops-agent.env
     volumes:
@@ -88,7 +94,8 @@ services:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 metastore-db:5432
       - TAKIPI_ARGS=takipi.name=hive-metastore,takipi.machine.name=metastore-container,takipi.deployment.name=hive-2.3.3
     env_file:
-      - hadoop.env
+      - core.env
+      - yarn.env
       - hive.env
       - overops-agent.env
     volumes:
