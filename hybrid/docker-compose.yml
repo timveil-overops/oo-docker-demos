@@ -16,7 +16,6 @@ services:
     ports:
       - "6060:6060"
 
-  # default agent properties are sufficient
   agent:
     image: timveil/oo-docker-agent:latest
 

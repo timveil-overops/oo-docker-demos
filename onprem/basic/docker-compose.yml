@@ -6,16 +6,17 @@ services:
     ports:
       - "8080:8080"
 
-  # todo: implement precondition env variable
   collector:
     image: timveil/oo-docker-onprem-collector:latest
     env_file:
       - overops-key.env
     environment:
+      - SERVICE_PRECONDITION=server:8080
       - TAKIPI_BACKEND_URL=http://server:8080
     ports:
       - "6060:6060"
 
-  # default agent properties are sufficient
   agent:
     image: timveil/oo-docker-agent:latest
+    environment:
+      - SERVICE_PRECONDITION=server:8080
