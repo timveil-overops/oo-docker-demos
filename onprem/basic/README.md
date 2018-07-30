@@ -5,11 +5,11 @@ This is a simple example of an OverOps "OnPrem" deployment.  The `docker-compose
 * `agent` - an OverOps Agent and sample event generator app
 
 ## Getting Started
-To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  The sample `SECRET_KEY` included below is a valid, limited trial key.
+To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  The sample `SECRET_KEY` included below is a valid, limited trial key.
 
 ```properties
 # Sample .env file
-SECRET_KEY=S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae
+TAKIPI_SECRET_KEY=S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae
 ```
 
 If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose.
