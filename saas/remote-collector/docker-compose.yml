@@ -1,15 +1,14 @@
 version: '3'
 services:
+
   collector:
     image: timveil/oo-docker-remote-collector:latest
-    environment:
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
+    env_file:
+      - overops-key.env
     ports:
       - "6060:6060"
+
   agent:
     image: timveil/oo-docker-agent:latest
-    environment:
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
-      - TAKIPI_COLLECTOR_HOST=collector
-    depends_on:
-      - collector
+    env_file:
+      - overops-agent.env

@@ -40,4 +40,5 @@ docker stack rm cassandra-stack
 
 ## Docker Images
 * Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
+* Agent Sidecar - [timveil/oo-docker-agent-sidecar](https://hub.docker.com/r/timveil/oo-docker-agent-sidecar/)
 * Cassandra - [cassandra](https://hub.docker.com/_/cassandra/)
