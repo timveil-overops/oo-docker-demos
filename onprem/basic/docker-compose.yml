@@ -1,22 +1,21 @@
 version: '3.3'
 services:
+
   server:
     image: timveil/oo-docker-onprem-server:latest
     ports:
       - "8080:8080"
+
+  # todo: implement precondition env variable
   collector:
     image: timveil/oo-docker-onprem-collector:latest
+    env_file:
+      - overops-key.env
     environment:
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
       - TAKIPI_BACKEND_URL=http://server:8080
     ports:
       - "6060:6060"
-    depends_on:
-      - server
+
+  # default agent properties are sufficient
   agent:
     image: timveil/oo-docker-agent:latest
-    environment:
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
-      - TAKIPI_MASTER_HOST=collector
-    depends_on:
-      - collector
