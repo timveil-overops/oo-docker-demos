@@ -12,3 +12,5 @@ services:
     image: timveil/oo-docker-agent:latest
     env_file:
       - overops-agent.env
+    environment:
+      - SERVICE_PRECONDITION=collector:6060

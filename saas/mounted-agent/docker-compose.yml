@@ -19,6 +19,7 @@ services:
       - overops-agent.env
     environment:
       - TAKIPI_ARGS=takipi.server.name=mounted-agent-container
+      - SERVICE_PRECONDITION=collector:6060
     volumes:
       - sidecar-volume:/sidecar
     ports:

@@ -13,11 +13,15 @@ services:
     image: timveil/oo-docker-remote-collector:latest
     env_file:
       - overops-key.env
+    environment:
+      - SERVICE_PRECONDITION=storage:8080
     ports:
       - "6060:6060"
 
   agent:
     image: timveil/oo-docker-agent:latest
+    environment:
+      - SERVICE_PRECONDITION=collector:6060
 
 # using docker named volume mount to store hybrid data; could alternatively use a bind mound on docker host
 volumes:
