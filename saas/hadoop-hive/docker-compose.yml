@@ -6,7 +6,7 @@ services:
     image: timveil/docker-hadoop-namenode
     environment:
       - CLUSTER_NAME=test
-      - TAKIPI_ARGS=takipi.name=hadoop-namenode,takipi.machine.name=namenode-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=hadoop-namenode,takipi.server.name=namenode-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
       - core.env
       - yarn.env
@@ -20,7 +20,7 @@ services:
     image: timveil/docker-hadoop-datanode
     environment:
       - SERVICE_PRECONDITION=namenode:50070
-      - TAKIPI_ARGS=takipi.name=hadoop-datanode,takipi.machine.name=datanode-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=hadoop-datanode,takipi.server.name=datanode-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
       - core.env
       - yarn.env
@@ -34,7 +34,7 @@ services:
     image: timveil/docker-hadoop-resourcemanager
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075
-      - TAKIPI_ARGS=takipi.name=yarn-resourcemanager,takipi.machine.name=resourcemanager-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=yarn-resourcemanager,takipi.server.name=resourcemanager-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
       - core.env
       - yarn.env
@@ -48,7 +48,7 @@ services:
     image: timveil/docker-hadoop-nodemanager
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
-      - TAKIPI_ARGS=takipi.name=yarn-nodemanager,takipi.machine.name=nodemanager-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=yarn-nodemanager,takipi.server.name=nodemanager-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
       - core.env
       - yarn.env
@@ -62,7 +62,7 @@ services:
     image: timveil/docker-hadoop-historyserver
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
-      - TAKIPI_ARGS=takipi.name=yarn-historyserver,takipi.machine.name=historyserver-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=yarn-historyserver,takipi.server.name=historyserver-container,takipi.deployment.name=hadoop-2.8.4
     env_file:
       - core.env
       - yarn.env
@@ -76,7 +76,7 @@ services:
     image: timveil/docker-hadoop-hive-hs2
     environment:
       - SERVICE_PRECONDITION=metastore:9083
-      - TAKIPI_ARGS=takipi.name=hive-hs2,takipi.machine.name=hs2-container,takipi.deployment.name=hive-2.3.3
+      - TAKIPI_ARGS=takipi.application.name=hive-hs2,takipi.server.name=hs2-container,takipi.deployment.name=hive-2.3.3
     env_file:
       - core.env
       - yarn.env
@@ -92,7 +92,7 @@ services:
     image: timveil/docker-hadoop-hive-metastore
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 metastore-db:5432
-      - TAKIPI_ARGS=takipi.name=hive-metastore,takipi.machine.name=metastore-container,takipi.deployment.name=hive-2.3.3
+      - TAKIPI_ARGS=takipi.application.name=hive-metastore,takipi.server.name=metastore-container,takipi.deployment.name=hive-2.3.3
     env_file:
       - core.env
       - yarn.env
