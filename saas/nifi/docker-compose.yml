@@ -1,24 +1,28 @@
 version: '3.3'
 services:
+
   collector:
     image: timveil/oo-docker-remote-collector:latest
-    environment:
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
+    env_file:
+      - overops-key.env
     ports:
       - "6060:6060"
+
+  sidecar:
+    image: timveil/oo-docker-agent-sidecar
+    volumes:
+      - sidecar-volume:/opt/takipi
+
   nifi:
     image: apache/nifi
-    volumes:
-      - ${VOLUME_SOURCE}:/opt/takipi
+    env_file:
+      - overops-agent.env
     environment:
-      - LD_LIBRARY_PATH=/opt/takipi/lib
-      - JAVA_TOOL_OPTIONS=-agentlib:TakipiAgent
-      - TAKIPI_SECRET_KEY=${SECRET_KEY}
-      - TAKIPI_COLLECTOR_HOST=collector
-      - TAKIPI_COLLECTOR_PORT=6060
-      - TAKIPI_MACHINE_NAME=nifi-container
-      - TAKIPI_ARGS="takipi.debug.logconsole"
+      - TAKIPI_ARGS=takipi.debug.logconsole,takipi.server.name=nifi-container
+    volumes:
+      - sidecar-volume:/sidecar
     ports:
       - "8080:8080"
-    depends_on:
-      - collector
+
+volumes:
+  sidecar-volume:
