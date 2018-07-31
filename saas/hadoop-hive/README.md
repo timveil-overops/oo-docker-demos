@@ -19,5 +19,3 @@ $ docker-compose exec hs2 bash
 > CREATE TABLE pokes (foo INT, bar STRING);
 > LOAD DATA LOCAL INPATH '/opt/hive/examples/files/kv1.txt' OVERWRITE INTO TABLE pokes;
 ```
-
-todo: why am i specifying a bunch of unused env values for services not used?
