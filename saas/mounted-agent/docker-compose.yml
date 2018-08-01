@@ -5,6 +5,8 @@ services:
     image: timveil/oo-docker-remote-collector:latest
     env_file:
       - overops-key.env
+    volumes:
+      - sources-volume:/sources
     ports:
       - "6060:6060"
 
@@ -22,8 +24,10 @@ services:
       - SERVICE_PRECONDITION=collector:6060
     volumes:
       - sidecar-volume:/sidecar
+      - sources-volume:/sources
     ports:
       - "8080:8080"
 
 volumes:
   sidecar-volume:
+  sources-volume:
