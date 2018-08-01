@@ -23,11 +23,11 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 You can easily delete previously download images for these examples with the following command:
 
 ```bash
-docker images -a | grep "timveil" | awk '{print $3}' | xargs docker rmi
+docker images -a | grep "timveil" | awk '{print $3}' | xargs docker rmi -f
 ```
 
 or, for a complete system prune (this is what I usually do):
 
 ```bash
-docker system prune -a -f --volumes
+docker system prune -a -f --volumes --filter "label=maintainer=tjveil@gmail.com"
 ```
