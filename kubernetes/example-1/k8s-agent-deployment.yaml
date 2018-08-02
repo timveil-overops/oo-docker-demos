@@ -36,14 +36,12 @@ spec:
             - name: JAVA_TOOL_OPTIONS
               value: "-agentpath:/agent/lib/libTakipiAgent.so"
 
-            - name: TAKIPI_COLLECTOR_HOST
-              value: "collector-service"
-
-            - name: TAKIPI_COLLECTOR_PORT
-              value: "6060"
+            - name: TAKIPI_MASTER_ENDPOINTS
+              value: "collector-service:6060"
 
           ports:
-            - containerPort: 8080
+            - name: embeded-jetty
+              containerPort: 8080
           volumeMounts:
             - name: agent-binary
               mountPath: /agent

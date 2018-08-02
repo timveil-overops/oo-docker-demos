@@ -23,7 +23,8 @@ spec:
         - name: remote-collector
           image: timveil/oo-docker-remote-collector:latest
           ports:
-            - containerPort: 6060
+            - name: rc-listen-on
+              containerPort: 6060
           env:
             - name: TAKIPI_SECRET_KEY
               value: "S36273#Sp8L10zFjWwO7NcM#CbqGSpzNgRBlUo1/kfr9WjgrKkShreFZKgVxo0nIM68=#1271"
