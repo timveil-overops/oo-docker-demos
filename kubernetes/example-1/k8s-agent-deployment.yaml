@@ -40,7 +40,7 @@ spec:
               value: "collector-service:6060"
 
           ports:
-            - name: embeded-jetty
+            - name: web-ui
               containerPort: 8080
           volumeMounts:
             - name: agent-binary
