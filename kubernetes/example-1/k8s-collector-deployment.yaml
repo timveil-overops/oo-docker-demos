@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: collector-deployment
+
+spec:
+
+  selector:
+    matchLabels:
+      app: overops
+      component: collector
+
+  replicas: 3
+
+  template:
+    metadata:
+      labels:
+        app: overops
+        component: collector
+
+    spec:
+      containers:
+        - name: remote-collector
+          image: timveil/oo-docker-remote-collector:latest
+          ports:
+            - containerPort: 6060
+          env:
+            - name: TAKIPI_SECRET_KEY
+              value: "S36273#Sp8L10zFjWwO7NcM#CbqGSpzNgRBlUo1/kfr9WjgrKkShreFZKgVxo0nIM68=#1271"

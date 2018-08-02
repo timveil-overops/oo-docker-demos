@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: agent-deployment
+
+spec:
+
+  selector:
+    matchLabels:
+      app: overops
+      component: agent
+
+  replicas: 5
+
+  template:
+    metadata:
+      labels:
+        app: overops
+        component: agent
+
+    spec:
+
+      volumes:
+        - name: agent-binary
+          emptyDir: {}
+
+      containers:
+
+        - name: event-generator
+          image: timveil/overops-event-generator
+          env:
+            - name: TAKIPI_ARGS
+              value: "takipi.resources.size.limit=0"
+
+            - name: JAVA_TOOL_OPTIONS
+              value: "-agentpath:/agent/lib/libTakipiAgent.so"
+
+            - name: TAKIPI_COLLECTOR_HOST
+              value: "collector-service"
+
+            - name: TAKIPI_COLLECTOR_PORT
+              value: "6060"
+
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: agent-binary
+              mountPath: /agent
+
+        - name: agent-sidecar
+          image: timveil/oo-docker-agent-sidecar
+          volumeMounts:
+            - name: agent-binary
+              mountPath: /agent
+          command: ["/bin/bash","-c","cp -r /opt/takipi/. /agent/ && tail -f /dev/null"]
