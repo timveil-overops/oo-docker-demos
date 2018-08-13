@@ -1,0 +1,33 @@
+version: '3.2'
+services:
+
+  collector:
+    image: timveil/oo-docker-remote-collector:alpine
+    env_file:
+      - overops-key.env
+    volumes:
+      - sources-volume:/sources
+    ports:
+      - "6060:6060"
+
+  sidecar:
+    image: timveil/oo-docker-agent-sidecar:alpine
+    volumes:
+      - sidecar-volume:/opt/takipi
+
+  agent:
+    image: timveil/overops-event-generator:alpine
+    env_file:
+      - overops-agent.env
+    environment:
+      - TAKIPI_ARGS=takipi.server.name=mounted-agent-container,takipi.resources.size.limit=0
+      - SERVICE_PRECONDITION=collector:6060
+    volumes:
+      - sidecar-volume:/sidecar
+      - sources-volume:/sources
+    ports:
+      - "8080:8080"
+
+volumes:
+  sidecar-volume:
+  sources-volume:
