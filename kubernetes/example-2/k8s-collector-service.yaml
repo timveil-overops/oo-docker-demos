@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: collector-service
+
+spec:
+
+  type: LoadBalancer
+
+  selector:
+    app: overops
+    component: collector
+
+  ports:
+    - protocol: TCP
+      name: listen-on
+      port: 6060
+      targetPort: 6060

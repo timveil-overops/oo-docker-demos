@@ -28,7 +28,7 @@ spec:
       containers:
 
         - name: event-generator
-          image: timveil/overops-event-generator:latest
+          image: timveil/overops-event-generator:alpine
           env:
             - name: TAKIPI_ARGS
               value: "takipi.resources.size.limit=0"
@@ -47,7 +47,7 @@ spec:
               mountPath: /agent
 
         - name: agent-sidecar
-          image: timveil/oo-docker-agent-sidecar:latest
+          image: timveil/oo-docker-agent-sidecar:alpine
           volumeMounts:
             - name: agent-binary
               mountPath: /agent
