@@ -41,6 +41,6 @@ docker stack rm mounted-agent-stack
 ```
 
 ## Docker Images
-* Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
-* Agent Sidecar - [timveil/oo-docker-agent-sidecar](https://hub.docker.com/r/timveil/oo-docker-agent-sidecar/)
-* Agent - [timveil/overops-event-generator](https://hub.docker.com/r/timveil/overops-event-generator)
+* Remote Collector - [timveil/oo-docker-remote-collector:alpine](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
+* Agent Sidecar - [timveil/oo-docker-agent-sidecar:alpine](https://hub.docker.com/r/timveil/oo-docker-agent-sidecar/)
+* Agent - [timveil/overops-event-generator:alpine](https://hub.docker.com/r/timveil/overops-event-generator)
