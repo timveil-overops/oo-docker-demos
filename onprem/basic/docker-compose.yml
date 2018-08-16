@@ -3,6 +3,8 @@ services:
 
   server:
     image: timveil/oo-docker-onprem-server:latest
+    environment:
+      - HOST_URL=server
     ports:
       - "8080:8080"
 
@@ -15,6 +17,12 @@ services:
       - TAKIPI_BACKEND_URL=http://server:8080
     ports:
       - "6060:6060"
+
+  # optional webhook sample integration
+  webhook:
+    image: timveil/oo-webhook-example:alpine
+    ports:
+      - "8090:8090"
 
   agent:
     image: timveil/oo-docker-agent:latest
