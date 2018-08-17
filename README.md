@@ -14,6 +14,7 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 * [Hybrid Deployment Model](hybrid) - Example of OO Hybrid deployment using Agent, *Remote* Collector and Storage Server in separate containers.
 * On-Prem Deployment Model
     * [Basic](onprem/basic) - Example of OO On-Prem deployment using Server, Agent and *Remote* Collector in separate containers.  H2 is used as the OO Server database.
+    * [Webhook](onprem/webhook-example) - Same as basic but includes an example WebHook endpoint.
     
 
 ## Tips and Tricks

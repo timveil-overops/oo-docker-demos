@@ -13,10 +13,10 @@ To begin, you must first create a `overops-key.env` file and place it in the sam
 TAKIPI_SECRET_KEY=S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae
 ```
 
-from the Alert settings you can add the following url as a Webhook endpoint:
+from the Alert settings you can add the following url as a WebHook endpoint:
 
 ```
-http://webhook:8090/webhook
+http://webhook:8090/wh/simple
 ```
 
 If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose.
