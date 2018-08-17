@@ -18,6 +18,11 @@ services:
     ports:
       - "6060:6060"
 
+  webhook:
+    image: timveil/oo-webhook-example:alpine
+    ports:
+      - "8090:8090"
+
   agent:
     image: timveil/oo-docker-agent:latest
     environment:
