@@ -20,3 +20,6 @@ $ docker-compose exec hs2 bash
 > LOAD DATA LOCAL INPATH '/opt/hive/examples/files/kv1.txt' OVERWRITE INTO TABLE pokes;
 > !quit
 ```
+
+# set this to 6gb on a box with 8gb allocated
+YARN_CONF_yarn_nodemanager_resource_memory___mb=6144
