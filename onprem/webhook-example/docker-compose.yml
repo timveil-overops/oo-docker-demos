@@ -4,7 +4,8 @@ services:
   server:
     image: timveil/oo-docker-onprem-server:latest
     environment:
-      - HOST_URL=server
+      - SERVER_HOSTNAME=localhost
+      - STORAGE_HOSTNAME=storage
     ports:
       - "8080:8080"
 
