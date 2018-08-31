@@ -5,12 +5,12 @@ services:
     image: timveil/oo-docker-onprem-server:latest
     environment:
       - SERVER_HOSTNAME=localhost
-      - STORAGE_HOSTNAME=storage
+      - STORAGE_HOSTNAME=server
     ports:
       - "8080:8080"
 
   collector:
-    image: timveil/oo-docker-onprem-collector:latest
+    image: timveil/oo-docker-onprem-collector:rootless
     env_file:
       - overops-key.env
     environment:
