@@ -7,6 +7,7 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 * SaaS Deployment Model
     * [Remote Collector Example](saas/remote-collector) - Agent and Collector deployed in separate containers.  This configuration is known as *Remote* Collector.
     * [Remote Collector Example with Nginx](saas/remote-collector-nginx) - Multiple Remote Collectors load balanced by Nginx.
+    * [Remote Collector Example with HA](saas/remote-collector-ha) - Multiple Remote Collectors load balanced by OverOps.
     * [Local Collector Example](saas/local-collector) - Agent and Collector are installed in the same container.  This configuration is known as *Local* Collector.
     * [Mounted Agent Example](saas/mounted-agent) - Uses volume mount and various environment variables to monitor JVM without installing OO Agent inside container.
     * [Cassandra Example](saas/cassandra) - Uses OO to monitor Cassandra running inside container.

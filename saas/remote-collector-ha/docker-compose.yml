@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  collector-1:
+    image: timveil/oo-docker-remote-collector:rootless
+    ports:
+      - "6061:6061"
+    env_file:
+      - overops-key.env
+    environment:
+      - TAKIPI_SERVER_NAME=collector-1
+      - TAKIPI_LISTEN_PORT=6061
+
+  collector-2:
+    image: timveil/oo-docker-remote-collector:rootless
+    ports:
+      - "6062:6062"
+    env_file:
+      - overops-key.env
+    environment:
+      - TAKIPI_SERVER_NAME=collector-2
+      - TAKIPI_LISTEN_PORT=6062
+
+  agent:
+    image: timveil/oo-docker-agent:rootless
+    env_file:
+      - overops-agent.env
+    environment:
+      - TAKIPI_ARGS=takipi.debug.logconsole

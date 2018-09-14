@@ -1,8 +1,7 @@
-# OverOps Load-balanced Remote Collector Example using Nginx
-This is a simple example of an OverOps SaaS deployment using a Remote Collector and load balancing those collectors using Nginx.  The `docker-compose.yml` contains the following services:
+# OverOps Remote Collector HA Example
+This is a simple example of an OverOps SaaS deployment using a Remote Collector and load balancing those collectors internally.  The `docker-compose.yml` contains the following services:
 * `collector-1` - an OverOps Collector running in a dedicated container (aka Remote Collector)
 * `collector-2` - an OverOps Collector running in a dedicated container (aka Remote Collector)
-* `load-balancer` - an instance of Nginx
 * `agent` - an OverOps Agent and sample event generator app
 
 ## Getting Started
@@ -43,4 +42,3 @@ docker stack rm remote-collector-stack
 ## Docker Images
 * Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
 * Agent - [timveil/oo-docker-agent](https://hub.docker.com/r/timveil/oo-docker-agent/)
-* Nginx - [nginx](https://hub.docker.com/_/nginx/)
