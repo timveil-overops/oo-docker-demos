@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  collector-1:
+    image: timveil/oo-docker-remote-collector:rootless
+    env_file:
+      - overops-key.env
+    environment:
+      - TAKIPI_LISTEN_PORT=6061
+
+  collector-2:
+    image: timveil/oo-docker-remote-collector:rootless
+    env_file:
+      - overops-key.env
+    environment:
+      - TAKIPI_LISTEN_PORT=6062
+
+  load-balancer:
+    build: ./nginx
+    ports:
+      - "6060:6060"
+    links:
+      - collector-1
+      - collector-2
+
+  agent:
+    image: timveil/oo-docker-agent:rootless
+    env_file:
+      - overops-agent.env
