@@ -5,24 +5,24 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 ## Examples
 
 * SaaS Deployment Model
-    * [Remote Collector Example](saas/remote-collector) - Agent and Collector deployed in separate containers.  This configuration is known as *Remote* Collector.
-    * [Remote Collector Example - Alpine (glibc)](saas/remote-collector-glibc) - Agent and Collector deployed in separate Alpine Linux containers using `glibc`.  This configuration is known as *Remote* Collector.
-    * [Remote Collector Example - Alpine (musl)](saas/remote-collector-musl) - Agent and Collector deployed in separate  Alpine Linux containers using `musl`.  This configuration is known as *Remote* Collector.
-    * [Remote Collector Example with Nginx](saas/remote-collector-nginx) - Multiple Remote Collectors load balanced by Nginx.
-    * [Remote Collector Example with HA](saas/remote-collector-ha) - Multiple Remote Collectors load balanced by OverOps.
-    * [Local Collector Example](saas/local-collector) - Agent and Collector are installed in the same container.  This configuration is known as *Local* Collector.
-    * [Mounted Agent Example](saas/mounted-agent) - Uses volume mount and various environment variables to monitor JVM without installing OO Agent inside container.
-    * [Mounted Agent Example - Alpine (glibc)](saas/mounted-agent-glibc) - Uses volume mount and various environment variables to monitor JVM without installing OO Agent inside a Alpine Linux container.
-    * [Mounted Agent Example - Alpine (musl)](saas/mounted-agent-musl) - Uses volume mount and various environment variables to monitor JVM without installing OO Agent inside a Alpine Linux container.
-    * [Cassandra Example](saas/cassandra) - Uses OO to monitor Cassandra running inside container.
-    * [NiFi Example](saas/nifi) - Uses OO to monitor Apache NiFi running inside container.
-    * [Hadoop 2.8.x Example](saas/hadoop-hive-2.8.x) - Uses OO to monitor Apache Hadoop and Hive.    
-    * [Hadoop 3.1.x Example](saas/hadoop-hive-3.1.x) - Uses OO to monitor Apache Hadoop and Hive.    
+    * [Remote Collector Example](saas/remote-collector)
+    * [Remote Collector Example - Alpine (glibc)](saas/remote-collector-glibc)
+    * [Remote Collector Example - Alpine (musl)](saas/remote-collector-musl)
+    * [Remote Collector Example with Nginx](saas/remote-collector-nginx)
+    * [Remote Collector Example with HA](saas/remote-collector-ha)
+    * [Local Collector Example](saas/local-collector)
+    * [Mounted Agent Example](saas/mounted-agent)
+    * [Mounted Agent Example - Alpine (glibc)](saas/mounted-agent-glibc)
+    * [Mounted Agent Example - Alpine (musl)](saas/mounted-agent-musl)
+    * [Cassandra Example](saas/cassandra)
+    * [NiFi Example](saas/nifi)
+    * [Hadoop 2.8.x Example](saas/hadoop-hive-2.8.x)    
+    * [Hadoop 3.1.x Example](saas/hadoop-hive-3.1.x)    
 * Hybrid Deployment Model 
-    * [Basic](hybrid/basic) - Example of OO Hybrid deployment using Agent, *Remote* Collector and Storage Server in separate containers.
+    * [Basic](hybrid/basic)
 * On-Prem Deployment Model
-    * [Basic](onprem/basic) - Example of OO On-Prem deployment using Server, Agent and *Remote* Collector in separate containers.  H2 is used as the OO Server database.
-    * [Webhook](onprem/webhook-example) - Same as basic but includes an example WebHook endpoint.
+    * [Basic](onprem/basic)
+    * [Webhook](onprem/webhook-example)
 * Kubernetes Examples
     * [Example 1](kubernetes/example-1)    
     * [Example 2](kubernetes/example-2)    
