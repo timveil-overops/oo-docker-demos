@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  collector:
+    image: timveil/oo-docker-remote-collector:alpine-glibc
+    env_file:
+      - overops-key.env
+    ports:
+      - "6060:6060"
+
+  agent:
+    image: timveil/oo-docker-agent:alpine-musl
+    env_file:
+      - overops-agent.env
+    environment:
+      - SERVICE_PRECONDITION=collector:6060

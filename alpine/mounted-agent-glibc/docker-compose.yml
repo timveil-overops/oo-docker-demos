@@ -2,7 +2,7 @@ version: '3.2'
 services:
 
   collector:
-    image: timveil/oo-docker-remote-collector:alpine
+    image: timveil/oo-docker-remote-collector:alpine-glibc
     env_file:
       - overops-key.env
     volumes:
@@ -11,12 +11,12 @@ services:
       - "6060:6060"
 
   sidecar:
-    image: timveil/oo-docker-agent-sidecar:alpine
+    image: timveil/oo-docker-agent-sidecar:alpine-glibc
     volumes:
       - sidecar-volume:/opt/takipi
 
   agent:
-    image: timveil/overops-event-generator:alpine
+    image: timveil/overops-event-generator:alpine-glibc
     env_file:
       - overops-agent.env
     environment:

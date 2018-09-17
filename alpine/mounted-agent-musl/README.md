@@ -1,4 +1,4 @@
-# OverOps Mounted Agent Example - Alpine
+# OverOps Mounted Agent Example - Alpine (musl)
 This is a simple example of using OverOps to monitor an external Docker image, in this case [timveil/oo-docker-mounted-agent](https://hub.docker.com/r/timveil/oo-docker-mounted-agent/).  Instead of specifying the `agentlib` inside the container during as a JVM startup flag, this example uses the `JAVA_TOOL_OPTIONS` environment variable to auto attach to any JVM launched inside the container.  The `docker-compose.yml` contains the following services:
 * `collector` - an OverOps Collector running in a dedicated container (aka Remote Collector)
 * `sidecar` - an OverOps Agent running in a dedicated container whose directory is exposed as a Docker `volume` mount

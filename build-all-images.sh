@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# docker base
+curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-base/trigger/a69ccba7-6602-489a-8bd8-fc884fe9beeb/
+
 # agent
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-agent/trigger/c2252f88-6984-4fc4-b235-1730d5123674/
 
@@ -24,13 +27,6 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{
 # webhook
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-webhook-example/trigger/8f3f35b5-a1a5-4e64-8117-de1cc3c60a8c/
 
-# alpine oracle
-curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-base-alpine-oracle/trigger/b189c2d5-55d6-4470-a300-3e0b15e89f55/
-
 # event generator
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/overops-event-generator/trigger/4d7190fe-e64e-4f36-a57f-18c3e81bbbf8/
 
-############################ do this last
-
-# docker base
-curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-base/trigger/a69ccba7-6602-489a-8bd8-fc884fe9beeb/
