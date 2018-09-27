@@ -3,10 +3,10 @@ version: "3"
 services:
 
   namenode:
-    image: timveil/docker-hadoop-namenode:2.8.x
+    image: timveil/docker-hadoop-namenode:2.7.x
     environment:
       - CLUSTER_NAME=test
-      - TAKIPI_ARGS=takipi.application.name=hadoop-namenode,takipi.server.name=namenode-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=hadoop-namenode,takipi.server.name=namenode-container,takipi.deployment.name=hadoop-2.7.7
     env_file:
       - core.env
       - yarn.env
@@ -17,10 +17,10 @@ services:
       - "50070:50070"
 
   datanode:
-    image: timveil/docker-hadoop-datanode:2.8.x
+    image: timveil/docker-hadoop-datanode:2.7.x
     environment:
       - SERVICE_PRECONDITION=namenode:50070
-      - TAKIPI_ARGS=takipi.application.name=hadoop-datanode,takipi.server.name=datanode-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=hadoop-datanode,takipi.server.name=datanode-container,takipi.deployment.name=hadoop-2.7.7
     env_file:
       - core.env
       - yarn.env
@@ -31,10 +31,10 @@ services:
       - "50075:50075"
 
   resourcemanager:
-    image: timveil/docker-hadoop-resourcemanager:2.8.x
+    image: timveil/docker-hadoop-resourcemanager:2.7.x
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075
-      - TAKIPI_ARGS=takipi.application.name=yarn-resourcemanager,takipi.server.name=resourcemanager-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=yarn-resourcemanager,takipi.server.name=resourcemanager-container,takipi.deployment.name=hadoop-2.7.7
     env_file:
       - core.env
       - yarn.env
@@ -45,10 +45,10 @@ services:
       - "8088:8088"
 
   nodemanager:
-    image: timveil/docker-hadoop-nodemanager:2.8.x
+    image: timveil/docker-hadoop-nodemanager:2.7.x
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
-      - TAKIPI_ARGS=takipi.application.name=yarn-nodemanager,takipi.server.name=nodemanager-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=yarn-nodemanager,takipi.server.name=nodemanager-container,takipi.deployment.name=hadoop-2.7.7
     env_file:
       - core.env
       - yarn.env
@@ -59,10 +59,10 @@ services:
       - "8042:8042"
 
   historyserver:
-    image: timveil/docker-hadoop-historyserver:2.8.x
+    image: timveil/docker-hadoop-historyserver:2.7.x
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 resourcemanager:8088
-      - TAKIPI_ARGS=takipi.application.name=yarn-historyserver,takipi.server.name=historyserver-container,takipi.deployment.name=hadoop-2.8.4
+      - TAKIPI_ARGS=takipi.application.name=yarn-historyserver,takipi.server.name=historyserver-container,takipi.deployment.name=hadoop-2.7.7
     env_file:
       - core.env
       - yarn.env
@@ -73,10 +73,10 @@ services:
       - "8188:8188"
 
   hs2:
-    image: timveil/docker-hadoop-hive-hs2:2.3.x
+    image: timveil/docker-hadoop-hive-hs2:1.2.x
     environment:
       - SERVICE_PRECONDITION=metastore:9083
-      - TAKIPI_ARGS=takipi.application.name=hive-hs2,takipi.server.name=hs2-container,takipi.deployment.name=hive-2.3.3
+      - TAKIPI_ARGS=takipi.application.name=hive-hs2,takipi.server.name=hs2-container,takipi.deployment.name=hive-1.2.2
     env_file:
       - core.env
       - yarn.env
@@ -89,10 +89,10 @@ services:
       - "10002:10002"
 
   metastore:
-    image: timveil/docker-hadoop-hive-metastore:2.3.x
+    image: timveil/docker-hadoop-hive-metastore:1.2.x
     environment:
       - SERVICE_PRECONDITION=namenode:50070 datanode:50075 metastore-db:5432
-      - TAKIPI_ARGS=takipi.application.name=hive-metastore,takipi.server.name=metastore-container,takipi.deployment.name=hive-2.3.3
+      - TAKIPI_ARGS=takipi.application.name=hive-metastore,takipi.server.name=metastore-container,takipi.deployment.name=hive-1.2.2
     env_file:
       - core.env
       - yarn.env
@@ -104,7 +104,7 @@ services:
       - "9083:9083"
 
   metastore-db:
-    image: timveil/docker-hadoop-hive-metastore-db:2.3.x
+    image: timveil/docker-hadoop-hive-metastore-db:1.2.x
 
   collector:
     image: timveil/oo-docker-remote-collector:latest

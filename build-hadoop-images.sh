@@ -3,6 +3,9 @@
 # hadoop base
 curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/docker-hadoop-base/trigger/08cbafd3-0ffe-42bf-a8e9-58d5882faa7a/
 
+# hadoop core
+curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/docker-hadoop-core/trigger/71688dba-7bfd-4a2b-8d62-4c3344e63fc5/
+
 # data node
 curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/docker-hadoop-datanode/trigger/985cb6cc-7d7e-43d4-a4ec-1f1b4717036d/
 

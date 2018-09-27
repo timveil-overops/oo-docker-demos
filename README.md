@@ -16,8 +16,9 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
     * [Mounted Agent Example - Alpine (musl)](saas/mounted-agent-musl)
     * [Cassandra Example](saas/cassandra)
     * [NiFi Example](saas/nifi)
-    * [Hadoop 2.8.x Example](saas/hadoop-hive-2.8.x)    
-    * [Hadoop 3.1.x Example](saas/hadoop-hive-3.1.x)    
+    * [Hadoop 2.7.x and Hive 1.2.x Example](saas/hadoop-hive-1.2.x)    
+    * [Hadoop 2.8.x and Hive 2.3.x Example](saas/hadoop-hive-2.3.x)    
+    * [Hadoop 3.1.x and Hive 3.1.x Example](saas/hadoop-hive-3.1.x)    
 * Hybrid Deployment Model 
     * [Basic](hybrid/basic)
 * On-Prem Deployment Model
