@@ -33,3 +33,7 @@ curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https:
 # hive metastore db
 curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/docker-hadoop-hive-metastore-db/trigger/46fa5969-ee1c-42bc-84e9-baa17c4289da/
 
+# tez builder
+curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/docker-hadoop-tez-builder/trigger/c76ed6d7-4d71-484d-8078-6c4c498fefc7/
+
+
