@@ -16,7 +16,7 @@ services:
       - sidecar-volume:/opt/takipi
 
   agent:
-    image: timveil/oo-dockewr-event-generator:latest
+    image: timveil/oo-docker-event-generator:latest
     env_file:
       - overops-agent.env
     environment:
