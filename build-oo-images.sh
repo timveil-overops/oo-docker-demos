@@ -28,4 +28,5 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-webhook-example/trigger/8f3f35b5-a1a5-4e64-8117-de1cc3c60a8c/
 
 # event generator
-curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/overops-event-generator/trigger/4d7190fe-e64e-4f36-a57f-18c3e81bbbf8/
+curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-event-generator/trigger/74435b82-7c2f-45b6-b83c-f45fde08a47c/
+

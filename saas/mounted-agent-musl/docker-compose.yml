@@ -16,7 +16,7 @@ services:
       - sidecar-volume:/opt/takipi
 
   agent:
-    image: timveil/overops-event-generator:alpine-musl
+    image: timveil/oo-docker-event-generator:alpine-musl
     env_file:
       - overops-agent.env
     environment:
