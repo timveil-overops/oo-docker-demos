@@ -25,6 +25,6 @@ services:
       - "8090:8090"
 
   agent:
-    image: timveil/oo-docker-agent:rootless
+    image: timveil/oo-docker-agent:latest
     environment:
       - SERVICE_PRECONDITION=server:8080

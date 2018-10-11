@@ -9,7 +9,7 @@ services:
       - "6060:6060"
 
   agent:
-    image: timveil/oo-docker-agent:rootless
+    image: timveil/oo-docker-agent:latest
     env_file:
       - overops-agent.env
     environment:

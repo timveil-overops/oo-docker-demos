@@ -22,7 +22,7 @@ services:
       - TAKIPI_LISTEN_PORT=6062
 
   agent:
-    image: timveil/oo-docker-agent:rootless
+    image: timveil/oo-docker-agent:latest
     env_file:
       - overops-agent.env
     environment:

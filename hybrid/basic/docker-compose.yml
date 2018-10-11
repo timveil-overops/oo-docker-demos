@@ -19,7 +19,7 @@ services:
       - "6060:6060"
 
   agent:
-    image: timveil/oo-docker-agent:rootless
+    image: timveil/oo-docker-agent:latest
     environment:
       - SERVICE_PRECONDITION=collector:6060
 

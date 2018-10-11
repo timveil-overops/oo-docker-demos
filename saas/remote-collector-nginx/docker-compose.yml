@@ -30,6 +30,6 @@ services:
       - collector-2
 
   agent:
-    image: timveil/oo-docker-agent:rootless
+    image: timveil/oo-docker-agent:latest
     env_file:
       - overops-agent.env
