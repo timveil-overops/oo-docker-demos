@@ -33,3 +33,5 @@ services:
     image: timveil/oo-docker-agent:latest
     env_file:
       - overops-agent.env
+    ports:
+      - "8080:8080"

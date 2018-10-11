@@ -14,3 +14,5 @@ services:
       - overops-agent.env
     environment:
       - SERVICE_PRECONDITION=collector:6060
+    ports:
+      - "8080:8080"

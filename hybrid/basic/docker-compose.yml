@@ -22,6 +22,8 @@ services:
     image: timveil/oo-docker-agent:latest
     environment:
       - SERVICE_PRECONDITION=collector:6060
+    ports:
+      - "8082:8080"
 
 # using docker named volume mount to store hybrid data; could alternatively use a bind mound on docker host
 volumes:

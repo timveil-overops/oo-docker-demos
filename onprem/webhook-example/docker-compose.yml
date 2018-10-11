@@ -28,3 +28,5 @@ services:
     image: timveil/oo-docker-agent:latest
     environment:
       - SERVICE_PRECONDITION=server:8080
+    ports:
+      - "8081:8080"
