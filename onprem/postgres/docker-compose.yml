@@ -1,9 +1,15 @@
 version: '3.3'
 services:
 
-  server:
-    image: timveil/oo-docker-onprem-server:latest
+  db:
+    image: postgres:10
     environment:
+      POSTGRES_PASSWORD: overops
+
+  server:
+    image: timveil/oo-docker-onprem-server:postgres
+    environment:
+      - SERVICE_PRECONDITION=db:5432
       - SERVER_HOSTNAME=localhost
       - STORAGE_HOSTNAME=server
     ports:
