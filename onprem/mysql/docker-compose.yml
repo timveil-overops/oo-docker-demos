@@ -2,12 +2,22 @@ version: '3.3'
 services:
 
   db:
-    image: mysql:8
+    image: mysql:5
     environment:
       MYSQL_ROOT_PASSWORD: overops
       MYSQL_USER: overops
       MYSQL_PASSWORD: overops
       MYSQL_ROOT_HOST: "%"
+
+  web:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    links:
+      - db
+    ports:
+    - "8082:8080"
 
   server:
     image: timveil/oo-docker-onprem-server:mysql
