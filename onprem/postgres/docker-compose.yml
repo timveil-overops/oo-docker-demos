@@ -11,6 +11,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@takipi.com
       PGADMIN_DEFAULT_PASSWORD: overops
+    ports:
+      - "8082:80"
 
   server:
     image: timveil/oo-docker-onprem-server:postgres
