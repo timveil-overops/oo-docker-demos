@@ -3,6 +3,7 @@ services:
 
   db:
     image: postgres:10
+    command: postgres -N 500
     environment:
       POSTGRES_PASSWORD: overops
 

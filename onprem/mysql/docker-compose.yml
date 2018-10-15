@@ -3,10 +3,11 @@ services:
 
   db:
     image: mysql:5
+    command: --max-connections=351
     environment:
       MYSQL_ROOT_PASSWORD: overops
-      MYSQL_USER: overops
-      MYSQL_PASSWORD: overops
+#      MYSQL_USER: overops
+#      MYSQL_PASSWORD: overops
       MYSQL_ROOT_HOST: "%"
 
   web:
@@ -14,6 +15,8 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: overops
     links:
       - db
     ports:
