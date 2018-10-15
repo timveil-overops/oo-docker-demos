@@ -1,8 +1,8 @@
 version: '3.3'
 services:
 
-  mysql:
-    image: mysql:5.7
+  db:
+    image: mysql:8
     environment:
       MYSQL_ROOT_PASSWORD: overops
       MYSQL_USER: overops
@@ -10,8 +10,9 @@ services:
       MYSQL_ROOT_HOST: "%"
 
   server:
-    image: timveil/oo-docker-onprem-server:latest
+    image: timveil/oo-docker-onprem-server:mysql
     environment:
+      - SERVICE_PRECONDITION=db:3306
       - SERVER_HOSTNAME=localhost
       - STORAGE_HOSTNAME=server
     ports:
