@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: overops
+      MYSQL_USER: overops
+      MYSQL_PASSWORD: overops
+      MYSQL_ROOT_HOST: "%"
+
+  server:
+    image: timveil/oo-docker-onprem-server:latest
+    environment:
+      - SERVER_HOSTNAME=localhost
+      - STORAGE_HOSTNAME=server
+    ports:
+      - "8080:8080"
+
+  collector:
+    image: timveil/oo-docker-onprem-collector:rootless
+    env_file:
+      - overops-key.env
+    environment:
+      - SERVICE_PRECONDITION=server:8080
+      - TAKIPI_BACKEND_URL=http://server:8080
+    ports:
+      - "6060:6060"
+
+  agent:
+    image: timveil/oo-docker-agent:latest
+    environment:
+      - SERVICE_PRECONDITION=server:8080
+    ports:
+      - "8081:8080"
