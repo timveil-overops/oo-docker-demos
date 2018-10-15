@@ -6,6 +6,12 @@ services:
     environment:
       POSTGRES_PASSWORD: overops
 
+  web:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@takipi.com
+      PGADMIN_DEFAULT_PASSWORD: overops
+
   server:
     image: timveil/oo-docker-onprem-server:postgres
     environment:
