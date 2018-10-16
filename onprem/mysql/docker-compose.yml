@@ -6,8 +6,6 @@ services:
     command: --max-connections=351
     environment:
       MYSQL_ROOT_PASSWORD: overops
-#      MYSQL_USER: overops
-#      MYSQL_PASSWORD: overops
       MYSQL_ROOT_HOST: "%"
 
   web:
