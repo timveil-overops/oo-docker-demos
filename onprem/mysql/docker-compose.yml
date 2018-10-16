@@ -3,7 +3,7 @@ services:
 
   db:
     image: mysql:5
-    command: mysqld --max-connections=351
+    command: mysqld --max-connections=500
     environment:
       MYSQL_ROOT_PASSWORD: overops
       MYSQL_ROOT_HOST: "%"
