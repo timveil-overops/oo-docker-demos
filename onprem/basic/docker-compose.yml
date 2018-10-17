@@ -8,6 +8,7 @@ services:
       - STORAGE_HOSTNAME=server
     ports:
       - "8080:8080"
+      - "8082:8082"
 
   collector:
     image: timveil/oo-docker-onprem-collector:rootless
