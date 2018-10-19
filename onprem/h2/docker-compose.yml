@@ -2,7 +2,7 @@ version: '3.3'
 services:
 
   server:
-    image: timveil/oo-docker-onprem-server:latest
+    image: timveil/oo-docker-onprem-server:h2
     environment:
       - SERVER_HOSTNAME=localhost
       - STORAGE_HOSTNAME=server
