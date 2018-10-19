@@ -22,7 +22,7 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
 * Hybrid Deployment Model 
     * [Basic](hybrid/basic)
 * On-Prem Deployment Model
-    * [Basic](onprem/basic)
+    * [Basic](onprem/h2)
     * [Webhook](onprem/webhook-example)
 * Kubernetes Examples
     * [Example 1](kubernetes/example-1)    
