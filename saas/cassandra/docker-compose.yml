@@ -1,16 +1,37 @@
 version: '3.3'
 services:
 
+  collector:
+    image: timveil/oo-docker-remote-collector:rootless
+    env_file:
+      - overops-key.env
+    ports:
+      - "6060:6060"
+
+  sidecar:
+    image: timveil/oo-docker-agent-sidecar:latest
+    volumes:
+      - sidecar-volume:/opt/takipi
+    environment:
+      - SERVICE_PRECONDITION=collector:6060
+
   cassandra:
     image: bitnami/cassandra:latest
+    env_file:
+      - overops-agent.env
+    environment:
+      - TAKIPI_ARGS=takipi.debug.logconsole,takipi.server.name=cassandra-container
+      - SERVICE_PRECONDITION=collector:6060
+    volumes:
+      - sidecar-volume:/sidecar
+      - cassandra_data:/bitnami
     ports:
       - '7000:7000'
       - '7001:7001'
       - '9042:9042'
       - '9160:9160'
-    volumes:
-      - cassandra_data:/bitnami
 
 volumes:
+  sidecar-volume:
   cassandra_data:
     driver: local
