@@ -24,8 +24,8 @@ services:
     image: timveil/oo-docker-onprem-server:mysql
     environment:
       - SERVICE_PRECONDITION=db:3306
-      - SERVER_HOSTNAME=localhost
-      - STORAGE_HOSTNAME=server
+      - HOST_URL=server
+      - FRONTEND_URL=localhost
     ports:
       - "8080:8080"
 
