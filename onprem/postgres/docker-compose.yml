@@ -22,7 +22,7 @@ services:
     environment:
       - SERVICE_PRECONDITION=db:5432
       - HOST_URL=server
-      - FRONTEND_URL=localhost
+      - FRONTEND_URL=http://localhost:8080
     ports:
       - "8080:8080"
 

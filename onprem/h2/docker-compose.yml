@@ -5,7 +5,7 @@ services:
     image: timveil/oo-docker-onprem-server:h2
     environment:
       - HOST_URL=server
-      - FRONTEND_URL=localhost
+      - FRONTEND_URL=http://localhost:8080
     ports:
       - "8080:8080"
       - "8082:8082"
