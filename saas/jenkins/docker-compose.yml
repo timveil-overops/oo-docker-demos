@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+
+  collector:
+    image: timveil/oo-docker-remote-collector:rootless
+    env_file:
+      - overops-key.env
+    ports:
+      - "6060:6060"
+
+  sidecar:
+    image: timveil/oo-docker-agent-sidecar:latest
+    volumes:
+      - sidecar-volume:/opt/takipi
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    env_file:
+      - overops-agent.env
+    environment:
+      - TAKIPI_ARGS=takipi.debug.logconsole,takipi.server.name=jenkins-container
+      - SERVICE_PRECONDITION=collector:6060
+    volumes:
+      - sidecar-volume:/sidecar
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+
+volumes:
+  sidecar-volume:
