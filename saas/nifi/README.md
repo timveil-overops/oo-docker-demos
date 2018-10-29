@@ -5,10 +5,10 @@ This is a simple example of using OverOps to monitor an external Docker image, i
 * `nifi` - an instance of NiFi monitored by an OverOps Agent mounted on the Docker host
 
 ## Getting Started
-To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  Be sure to update the values for `SECRET_KEY`.
+To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  Be sure to update the values for `TAKIPI_SECRET_KEY`.
 
 ```properties
-# Sample .env file - You must update these values
+# Sample overops-key.env file - You must update these values
 TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
 ```
 

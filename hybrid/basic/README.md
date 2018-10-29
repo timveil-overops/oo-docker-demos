@@ -5,12 +5,11 @@ This is a simple example of an OverOps "Hybrid" deployment.  The `docker-compose
 * `agent` - an OverOps Agent and sample event generator app
 
 ## Getting Started
-To begin, you must first create a `.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `.env` file.  Be sure to update the values for `SECRET_KEY` and `VOLUME_SOURCE`.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled (this must be preformed by OverOps).
+To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  Be sure to update the value for `TAKIPI_SECRET_KEY`.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled (this must be preformed by OverOps).
 
 ```properties
-# Sample .env file - You must update these values
-SECRET_KEY=your-very-own-overops-secret-key
-VOLUME_SOURCE=/path/on/host/to/hybrid-storage/
+# Sample overops-key.env file - You must update these values
+TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
 ```
 
 When configuring the OverOps Storage Server via the UI, "Storage server address" should be `http://storage:8080`.  This is the address the Collector needs.  The "Web app-facing address" should be `http://localhost:8080`.  This is the address the UI needs.

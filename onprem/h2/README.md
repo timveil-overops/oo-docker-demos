@@ -5,7 +5,7 @@ This is a simple example of an OverOps "OnPrem" deployment.  The `docker-compose
 * `agent` - an OverOps Agent and sample event generator app
 
 ## Getting Started
-To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  The sample `SECRET_KEY` included below is a valid, limited trial key.
+To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  The sample `TAKIPI_SECRET_KEY` included below is a valid, limited trial key.
 
 ```properties
 # Sample .env file
