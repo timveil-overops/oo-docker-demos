@@ -28,7 +28,7 @@ spec:
       containers:
 
         - name: event-generator
-          image: timveil/overops-event-generator:latest
+          image: timveil/oo-docker-event-generator:latest
           env:
             - name: TAKIPI_ARGS
               value: "takipi.resources.size.limit=0"
