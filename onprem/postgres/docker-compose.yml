@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_PASSWORD: overops
 
-  web:
+  db-ui:
     image: dpage/pgadmin4:latest
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@takipi.com
