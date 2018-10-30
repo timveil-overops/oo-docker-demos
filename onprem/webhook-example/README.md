@@ -19,8 +19,6 @@ from the Alert settings you can add the following url as a WebHook endpoint:
 http://webhook:8090/wh/simple
 ```
 
-If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose.
-
 ## Docker Compose
 
 ### Start the Containers
@@ -33,19 +31,6 @@ docker-compose up
 docker-compose down
 ```
 
-## Kubernetes or Swarm (Experimental)
-
-### Start the Containers
-*As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:*
-```bash
-env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml onprem-stack
-```
-
-### Stop and Destroy the Containers
-```bash
-docker stack rm onprem-stack
-```
-
 ## Docker Images
 * OnPrem Server - [timveil/oo-docker-onprem-server](https://hub.docker.com/r/timveil/oo-docker-onprem-server/)
 * OnPrem Collector - [timveil/oo-docker-onprem-collector](https://hub.docker.com/r/timveil/oo-docker-onprem-collector/)
@@ -53,11 +38,7 @@ docker stack rm onprem-stack
 * Webhook - [timveil/oo-webhook-example](https://hub.docker.com/r/timveil/oo-webhook-example/)
 
 ## Logging In to the OnPrem Server
-Once the server is up, you can access the OverOps UI by going to `http://localhost:8080/login.html` or `http://server:8080/login.html`.  You may want to add the following entry to your hosts file.
-
-```
-127.0.0.1       server
-```
+Once the server is up, you can access the OverOps UI by going to `http://localhost:8080/login.html` or `http://server:8080/login.html`.  
 
 The default username and password are as follows: 
 
