@@ -1,6 +1,6 @@
 # OverOps Docker Demos
 
-OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works well with both containers and traditional servers or virtual machines.  The following examples demonstrate how to get up and running quickly using Docker for each deployment model using a variety of configurations and techniques.  While these examples use Docker Compose to define multiple services, the underlying Docker images could be used alone or with a variety of other container management or orchestration tools.  In fact, the edge channel of Docker for Mac/Windows now allows you to leverage either Swarm or Kubernetes as the underlying orchestrator.  If you are using this version of Docker, then it's possible to deploy to Swarm or Kubernetes using the provided `docker-compose.yml` files.  This is quick way to test OverOps in Kubernetes!
+OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works well with both containers and traditional servers or virtual machines.  The following examples demonstrate how to get up and running quickly using Docker for each deployment model using a variety of configurations and techniques.  While a majority of these examples use Docker Compose to define multiple services, the underlying Docker images could be used alone or with a variety of other container management or orchestration tools.
 
 ## Examples
 
@@ -27,8 +27,8 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
     * [Postgres](onprem/postgres)
     * [Webhook](onprem/webhook-example)
 * Kubernetes Examples
-    * [Example 1](kubernetes/example-1)    
-    * [Example 2](kubernetes/example-2)    
+    * [Example 1 - CentOS based](kubernetes/example-1)    
+    * [Example 2 - Alpine based](kubernetes/example-2)    
     
     
 
