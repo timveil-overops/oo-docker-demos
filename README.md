@@ -30,7 +30,8 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
     * [Example 1 - CentOS based](kubernetes/example-1)    
     * [Example 2 - Alpine based](kubernetes/example-2)    
     
-    
+## Issues
+If you encounter issues with the examples or the underlying docker images feel free to create an issue.
 
 ## Tips and Tricks
 
