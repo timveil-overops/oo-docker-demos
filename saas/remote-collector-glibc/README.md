@@ -11,8 +11,6 @@ To begin, you must first create a `overops-key.env` file and place it in the sam
 TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
 ```
 
-If you are using the latest edge channel of Docker, you can deploy directly to Kubernetes using Docker Compose.
-
 ## Docker Compose
 
 ### Start the Containers
@@ -23,19 +21,6 @@ docker-compose up
 ### Stop and Destroy the Containers
 ```bash
 docker-compose down
-```
-
-## Kubernetes or Swarm (Experimental)
-
-### Start the Containers
-*As of today `docker stack deploy` does not process values stored in `.env` files.  The following works around that challenge:*
-```bash
-env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy -c docker-compose.yml remote-collector-stack
-```
-
-### Stop and Destroy the Containers
-```bash
-docker stack rm remote-collector-stack
 ```
 
 ## Docker Images
