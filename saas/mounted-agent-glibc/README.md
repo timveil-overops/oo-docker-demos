@@ -26,6 +26,6 @@ docker-compose down
 ```
 
 ## Docker Images
-* Remote Collector - [timveil/oo-docker-remote-collector:alpine-glibc](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
+* Remote Collector - [timveil/oo-docker-remote-collector:rootless](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
 * Agent Sidecar - [timveil/oo-docker-agent-sidecar:alpine-glibc](https://hub.docker.com/r/timveil/oo-docker-agent-sidecar/)
 * Agent - [timveil/oo-docker-event-generator:alpine-glibc](https://hub.docker.com/r/timveil/oo-docker-event-generator)

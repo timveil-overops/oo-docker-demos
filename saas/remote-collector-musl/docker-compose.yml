@@ -2,7 +2,7 @@ version: '3'
 services:
 
   collector:
-    image: timveil/oo-docker-remote-collector:alpine-glibc
+    image: timveil/oo-docker-remote-collector:rootless
     env_file:
       - overops-key.env
     ports:

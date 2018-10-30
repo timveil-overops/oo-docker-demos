@@ -107,7 +107,7 @@ services:
     image: timveil/docker-hadoop-hive-metastore-db:2.3.x
 
   collector:
-    image: timveil/oo-docker-remote-collector:latest
+    image: timveil/oo-docker-remote-collector:rootless
     env_file:
       - overops-key.env
     ports:
