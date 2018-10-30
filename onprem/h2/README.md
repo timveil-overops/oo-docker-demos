@@ -39,7 +39,7 @@ The default username and password are as follows:
 | Password | `123456` |
 
 
-## Database Connections
+## Database Access
 Below are connection strings you can use to connect to the various H2 databases using the H2 Console which can be accessed at `http://localhost:8082`.  Both username and password can be left blank.
 
 ### Stats Database

@@ -8,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: overops
       MYSQL_ROOT_HOST: "%"
 
-  web:
+  db-ui:
     image: phpmyadmin/phpmyadmin:latest
     environment:
       PMA_HOST: db
