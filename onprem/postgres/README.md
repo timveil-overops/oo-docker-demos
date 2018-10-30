@@ -11,3 +11,23 @@ Host: db
 Port: 5432
 Username: postgres
 Password: overops
+
+### Stats Database
+```
+takipi
+```
+
+### Queue Database
+```
+qsql
+```
+
+### Primitive Data Store (Not Active)
+```
+pds
+```
+
+### Dynalite Databases
+```
+dynalite
+```

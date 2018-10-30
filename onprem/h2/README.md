@@ -72,6 +72,11 @@ jdbc:h2:tcp://localhost:5000/takipi
 jdbc:h2:tcp://localhost:5002/qsql
 ```
 
+### Primitive Data Store (Not Active)
+```
+jdbc:h2:tcp://localhost:5003/pds
+```
+
 ### Dynalite Databases
 
 ```
