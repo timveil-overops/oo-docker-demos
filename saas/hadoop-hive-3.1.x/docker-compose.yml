@@ -62,7 +62,7 @@ services:
     image: timveil/docker-hadoop-historyserver:3.1.x
     environment:
       - SERVICE_PRECONDITION=namenode:9870 datanode:9864 resourcemanager:8088
-      - TAKIPI_ARGS=takipi.application.name=yarn-historyserver,takipi.server.name=historyserver-container,takipi.deployment.name=hadoop-3.1.1
+      - TAKIPI_ARGS=takipi.application.name=yarn-timeline-server,takipi.server.name=timeline-server-container,takipi.deployment.name=hadoop-3.1.1
     env_file:
       - core.env
       - yarn.env
