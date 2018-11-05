@@ -1,5 +1,5 @@
 # OverOps Hadoop 2.8.x and Hive 1.2.x Example
-This is an example of using OverOps to monitor a single node Apache Hadoop Cluster with Apache Hive.  The `docker-compose.yml` contains the following services:
+This is an example of using OverOps to monitor a single node Apache Hadoop cluster with Apache Hive.  The `docker-compose.yml` contains the following services:
 * `namenode` - Apache Hadoop NameNode
 * `datanode` - Apache Hadoop DataNode
 * `resourcemanager` - Apache Hadoop YARN Resource Manager
