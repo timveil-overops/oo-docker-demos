@@ -7,9 +7,16 @@ This is a simple example of using OverOps to monitor an external Docker image, i
 ## Getting Started
 To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  Be sure to update the values for `TAKIPI_SECRET_KEY`.
 
+### overops-key.env
 ```properties
-# Sample overops-key.env file - You must update these values
 TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
+```
+
+### overops-agent.env
+```properties
+JAVA_TOOL_OPTIONS=-agentpath:/sidecar/lib/libTakipiAgent.so
+TAKIPI_COLLECTOR_HOST=collector
+TAKIPI_COLLECTOR_PORT=6060
 ```
 
 ## Docker Compose

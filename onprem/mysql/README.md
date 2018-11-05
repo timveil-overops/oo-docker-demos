@@ -9,10 +9,11 @@ This is a simple example of an OverOps "OnPrem" deployment backed by MySQL.  The
 ## Getting Started
 To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  The sample `TAKIPI_SECRET_KEY` included below is a valid, limited trial key.
 
+### overops-key.env
 ```properties
-# Sample overops-key.env file
 TAKIPI_SECRET_KEY=S1#qrXOZTWZsAzN2X0x#02G06kYSRWvet5HQJcq+LVAALN/a8Vu4QqKGIr/d+Ho=#84ae
 ```
+
 ## Docker Compose
 
 ### Start the Containers

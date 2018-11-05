@@ -7,8 +7,8 @@ This is a simple example of an OverOps "Hybrid" deployment.  The `docker-compose
 ## Getting Started
 To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  Be sure to update the value for `TAKIPI_SECRET_KEY`.  Your Secret Key must correspond to a Service ID that has Hybrid Storage enabled (this must be preformed by OverOps).
 
+### overops-key.env
 ```properties
-# Sample overops-key.env file - You must update these values
 TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
 ```
 
@@ -25,6 +25,7 @@ docker-compose up
 ```bash
 docker-compose down
 ```
+
 ## Docker Images
 * Hybrid Storage Server - [timveil/oo-docker-hybrid-storage](https://hub.docker.com/r/timveil/oo-docker-hybrid-storage/)
 * Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)

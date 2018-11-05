@@ -9,8 +9,16 @@ Keep in mind the OverOps Agent could be installed on the Docker Host and exposed
 ## Getting Started
 To begin, you must first create a file called `overops-key.env` and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.
 
+### overops-key.env
 ```properties
 TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
+```
+
+### overops-agent.env
+```properties
+JAVA_TOOL_OPTIONS=-agentpath:/sidecar/lib/libTakipiAgent.so
+TAKIPI_COLLECTOR_HOST=collector
+TAKIPI_COLLECTOR_PORT=6060
 ```
 
 ## Docker Compose

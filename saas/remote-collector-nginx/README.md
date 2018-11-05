@@ -8,9 +8,15 @@ This is a simple example of an OverOps SaaS deployment using a Remote Collector 
 ## Getting Started
 To begin, you must first create a `overops-key.env` file and place it in the same directory as the `Dockerfile`.  Below is a sample `overops-key.env` file.  Be sure to update the value for `TAKIPI_SECRET_KEY`.
 
+### overops-key.env
 ```properties
-# Sample overops-key.env file - You must update these values
 TAKIPI_SECRET_KEY=your-very-own-overops-secret-key
+```
+
+### overops-agent.env
+```properties
+TAKIPI_COLLECTOR_HOST=load-balancer
+TAKIPI_COLLECTOR_PORT=6060
 ```
 
 ## Docker Compose
