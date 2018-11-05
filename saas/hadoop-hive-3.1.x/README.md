@@ -25,6 +25,7 @@ Hadoop configuration parameters are provided by the following `.env` files.  Ult
 * `HDFS_CONF_*` > `hdfs-site.xml`
 * `HIVE_SITE_CONF_*` > `hive-site.xml`
 * `YARN_CONF_*` > `yarn-site.xml`
+* `METASTORE_SITE_CONF_*` > `metastore-site.xml`
 
 Key names use the following character conversions:
 * a single underscore `_` equals dot `.`
