@@ -1,4 +1,4 @@
-# OverOps Hadoop 2.8.x and Hive 1.2.x Example
+# OverOps Hadoop 2.7.x and Hive 1.2.x Example
 This is an example of using OverOps to monitor a single node Apache Hadoop cluster with Apache Hive.  The `docker-compose.yml` contains the following services:
 * `namenode` - Apache Hadoop NameNode
 * `datanode` - Apache Hadoop DataNode
@@ -99,6 +99,14 @@ docker-compose down
 ```
 
 ## Docker Images
+* Hadoop NameNode - [timveil/docker-hadoop-namenode:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-namenode/)
+* Hadoop DataNode - [timveil/docker-hadoop-datanode:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-datanode/)
+* YARN Resource Manager - [timveil/docker-hadoop-resourcemanager:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-resourcemanager/)
+* YARN Node Manager - [timveil/docker-hadoop-nodemanager:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-nodemanager/)
+* YARN Timeline Server - [timveil/docker-hadoop-historyserver:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-historyserver/)
+* Hive Hiverserver2 - [timveil/docker-hadoop-hive-hs2:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-hs2/)
+* Hive Metastore - [timveil/docker-hadoop-hive-metastore:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-metastore/)
+* Hive Metastore Postgres DB - [timveil/docker-hadoop-hive-metastore-db:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-metastore-db/)
 * Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
 * Agent Sidecar - [timveil/oo-docker-agent-sidecar](https://hub.docker.com/r/timveil/oo-docker-agent-sidecar/)
 
