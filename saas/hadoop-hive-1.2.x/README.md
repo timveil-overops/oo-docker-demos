@@ -98,19 +98,6 @@ docker-compose up
 docker-compose down
 ```
 
-## Docker Images
-* Hadoop NameNode - [timveil/docker-hadoop-namenode:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-namenode/)
-* Hadoop DataNode - [timveil/docker-hadoop-datanode:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-datanode/)
-* YARN Resource Manager - [timveil/docker-hadoop-resourcemanager:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-resourcemanager/)
-* YARN Node Manager - [timveil/docker-hadoop-nodemanager:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-nodemanager/)
-* YARN Timeline Server - [timveil/docker-hadoop-historyserver:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-historyserver/)
-* Hive Hiverserver2 - [timveil/docker-hadoop-hive-hs2:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-hs2/)
-* Hive Metastore - [timveil/docker-hadoop-hive-metastore:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-metastore/)
-* Hive Metastore Postgres DB - [timveil/docker-hadoop-hive-metastore-db:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-metastore-db/)
-* Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
-* Agent Sidecar - [timveil/oo-docker-agent-sidecar](https://hub.docker.com/r/timveil/oo-docker-agent-sidecar/)
-
-
 ## Testing
 Once all services are up you can create a simple hive table to test functionality.  For example:
 
@@ -122,3 +109,15 @@ $ docker-compose exec hs2 bash
 > SELECT * FROM pokes;
 > !quit
 ```
+
+## Docker Images
+* Hadoop NameNode - [timveil/docker-hadoop-namenode:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-namenode/)
+* Hadoop DataNode - [timveil/docker-hadoop-datanode:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-datanode/)
+* YARN Resource Manager - [timveil/docker-hadoop-resourcemanager:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-resourcemanager/)
+* YARN Node Manager - [timveil/docker-hadoop-nodemanager:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-nodemanager/)
+* YARN Timeline Server - [timveil/docker-hadoop-historyserver:2.7.x](https://hub.docker.com/r/timveil/docker-hadoop-historyserver/)
+* Hive Hiverserver2 - [timveil/docker-hadoop-hive-hs2:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-hs2/)
+* Hive Metastore - [timveil/docker-hadoop-hive-metastore:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-metastore/)
+* Hive Metastore Postgres DB - [timveil/docker-hadoop-hive-metastore-db:1.2.x](https://hub.docker.com/r/timveil/docker-hadoop-hive-metastore-db/)
+* Remote Collector - [timveil/oo-docker-remote-collector](https://hub.docker.com/r/timveil/oo-docker-remote-collector/)
+* Agent Sidecar - [timveil/oo-docker-agent-sidecar](https://hub.docker.com/r/timveil/oo-docker-agent-sidecar/)
