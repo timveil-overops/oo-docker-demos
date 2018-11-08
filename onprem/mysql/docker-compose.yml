@@ -30,7 +30,7 @@ services:
       - "8080:8080"
 
   collector:
-    image: timveil/oo-docker-onprem-collector:rootless
+    image: timveil/oo-docker-remote-collector:rootless
     env_file:
       - overops-key.env
     environment:
