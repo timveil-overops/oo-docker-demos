@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: remote-collector
-          image: timveil/oo-docker-remote-collector:rootless
+          image: timveil/oo-docker-remote-collector:alpine-glibc
           ports:
             - name: listen-on
               containerPort: 6060
