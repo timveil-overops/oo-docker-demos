@@ -1,0 +1,69 @@
+version: '3.5'
+services:
+
+  roach-0:
+    container_name: roach-0
+    hostname: roach-0
+    image: cockroachdb/cockroach:v2.1.0
+    command: start --logtostderr --insecure --join=roach-0,roach-1,roach-2
+    ports:
+      - 8081:8080
+      - 26257:26257
+
+  roach-1:
+    container_name: roach-1
+    hostname: roach-1
+    image: cockroachdb/cockroach:v2.1.0
+    command: start --logtostderr --insecure --join=roach-0,roach-1,roach-2
+    ports:
+      - 8082:8080
+      - 26258:26257
+
+  roach-2:
+    container_name: roach-2
+    hostname: roach-2
+    image: cockroachdb/cockroach:v2.1.0
+    command: start --logtostderr --insecure --join=roach-0,roach-1,roach-2
+    ports:
+      - 8083:8080
+      - 26259:26257
+
+  load-balancer:
+    build: ./nginx
+    ports:
+      - "5432:5432"
+      - "8080:8080"
+    links:
+      - roach-0
+      - roach-1
+      - roach-2
+
+  server:
+    image: timveil/oo-docker-onprem-server:postgres
+    environment:
+      - SERVICE_PRECONDITION=load-balancer:5432
+      - DB_HOST=load-balancer
+      - DB_PORT=5432
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - HOST_URL=server
+      - FRONTEND_URL=http://localhost:8084
+    ports:
+      - "8084:8080"
+
+  collector:
+    image: timveil/oo-docker-remote-collector:rootless
+    env_file:
+      - overops-key.env
+    environment:
+      - SERVICE_PRECONDITION=server:8080
+      - TAKIPI_BACKEND_URL=http://server:8080
+    ports:
+      - "6060:6060"
+
+  agent:
+    image: timveil/oo-docker-agent:latest
+    environment:
+      - SERVICE_PRECONDITION=server:8080
+    ports:
+      - "8085:8080"
