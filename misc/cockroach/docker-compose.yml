@@ -43,3 +43,14 @@ services:
       - roach-0
       - roach-1
       - roach-2
+
+  generator:
+    container_name: generator
+    hostname: generator
+    build: ./generator
+    networks:
+      - roach-net
+    links:
+      - lb
+
+
