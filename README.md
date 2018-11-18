@@ -10,7 +10,6 @@ OverOps (OO) supports three deployment models (SaaS, Hybrid, On-Prem) and works 
     * [Remote Collector Example - Alpine (musl)](saas/remote-collector-musl)
     * [Remote Collector Example with Nginx](saas/remote-collector-nginx)
     * [Remote Collector Example with HA](saas/remote-collector-ha)
-    * [Local Collector Example](saas/local-collector)
     * [Mounted Agent Example](saas/mounted-agent)
     * [Mounted Agent Example - Alpine (glibc)](saas/mounted-agent-glibc)
     * [Mounted Agent Example - Alpine (musl)](saas/mounted-agent-musl)
