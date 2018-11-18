@@ -12,14 +12,8 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{
 # on-prem server
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-onprem-server/trigger/be5d1a5a-48e2-4272-99f6-d073c3e8185d/
 
-# on-prem collector
-curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-onprem-collector/trigger/e287e373-c639-4e58-9cc1-f35eddfe1610/
-
 # remote collector
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-remote-collector/trigger/cababe10-1730-448c-8079-ed4b278a9451/
-
-# local collector
-curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-local-collector/trigger/ef1aefe1-d222-4589-82a4-e432d1e24658/
 
 # hybrid storage
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-hybrid-storage/trigger/245da992-15be-4a28-99e1-7a917fce1774/
@@ -28,5 +22,5 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{
 curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-webhook-example/trigger/8f3f35b5-a1a5-4e64-8117-de1cc3c60a8c/
 
 # event generator
-curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-event-generator/trigger/74435b82-7c2f-45b6-b83c-f45fde08a47c/
+curl -H "Accept: application/json" -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/timveil/oo-docker-event-generator/trigger/74435b82-7c2f-45b6-b83c-f45fde08a47c/
 

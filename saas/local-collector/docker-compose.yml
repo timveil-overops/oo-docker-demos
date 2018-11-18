@@ -1,6 +1,0 @@
-version: '3'
-services:
-  local-collector:
-    image: timveil/oo-docker-local-collector:latest
-    env_file:
-      - overops-key.env
